@@ -1,0 +1,23 @@
+<div id="menusym">
+        <h3>Choose Gender</h3>
+        <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                <div id="female" class="female">
+                <a href="symptoms.html#!/female"><img src="{{imgfemale}}" alt="female"></a>
+                <div class="row">
+                        <a class="btn btn-primary rbtn" ng-show="BackView" ng-click="RotateImg('female', 'back');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
+                        <a  class="btn btn-primary rbtn" ng-hide="BackView" ng-click="RotateImg('female', 'front');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
+                        <a hgref="#" class="btn btn-primary rbtn">All Symptoms</a>
+                    </div>
+                </div>
+        </div>         
+        <div class="col-md-6 col-xs-6 col-lg-6 col-sm-6">
+                <div id="male" class="male">
+                <a href="symptoms.html#!/male"><img src="{{imgmale}}" alt="male"></a>
+                <div class="row">
+                        <a class="btn btn-primary rbtn" ng-show="BackView" ng-click="RotateImg('male', 'back');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
+                        <a class="btn btn-primary rbtn" ng-hide="BackView" ng-click="RotateImg('male', 'front');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
+                        <a href="#"  class="btn btn-primary rbtn">All Symptoms</a>
+                    </div>
+                </div>
+        </div>
+</div>

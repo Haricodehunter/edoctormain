@@ -1,5 +1,29 @@
-var app = angular.module('myGallery', []);
+var app = angular.module('myGallery', ['ngRoute']);
+app.config(function($routeProvider) {
+  $routeProvider
 
+      // route for the home page
+      .when('/', {
+          templateUrl : 'pages/smain.html',
+          controller  : 'symptomcontroller'
+      })
+
+      // route for the about page
+      .when('/male', {
+          templateUrl : 'pages/male.html',
+          controller  : 'symptomcontroller'
+      })
+
+      // route for the contact page
+      .when('/female', {
+          templateUrl : 'pages/female.html',
+          controller  : 'symptomcontroller'
+      })
+      .when('/symptomsinner', {
+          templateUrl : 'pages/symptomsinner.html',
+          controller  : 'symptomcontroller'
+      });
+});
 app.controller('Gallery', function ($scope) {
   $scope.view ="";
   $scope.images = [

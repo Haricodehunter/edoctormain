@@ -21,6 +21,7 @@ $('.doctorslide').carousel({
     }
   });
 
+  $(".parallax-bg").parallaxScroll({friction:.5,direction:"vertical"});
   
 var affixElement = 'header';
 

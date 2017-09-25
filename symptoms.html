@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Edoctor</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/jquery.sidr.dark.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="http://vjs.zencdn.net/6.2.7/video-js.css" rel="stylesheet">
+    
+     
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.min.js"></script>
+     <!-- If you'd like to support IE8 -->
+     <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  </head>
+
+  <body>
+   <div class="wrapper" ng-app='myGallery'>
+     <header>
+        <div class="top-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 pull-left">
+                <a href="#" class="elogo"><img src="img/logo.png" alt="EDoctors"></a>
+              </div>
+              
+              
+              <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 pull-right">
+                  <a href="#" class="dha"><img src="img/dha.png" alt="DHA"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="main-nav row" >
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#"><span class="navico ico1"></span><span class='navtit'>News</span></a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="navico ico2"></span><span class='navtit'>Health Tips</span></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#">Test 1</a></li>
+                              <li><a href="#">Loresum ipsum isefdczscv</a></li>
+                              <li><a href="#">Loresum ipsum isefdczscv</a></li>
+                              <li><a href="#">Loresum ipsum isefdczscv</a></li>
+                            </ul>
+                          
+                      </li>
+                      <li><a href="#"><span class="navico ico3"></span><span class='navtit'>Symptoms</span></a></li>
+                      <li><a href="#"><span class="navico ico4"></span><span class='navtit'>Videos</span></a></li>
+                      <li><a href="#"><span class="navico ico5"></span><span class='navtit'>Conditions</span></a></li>
+                      <li><a href="#"><span class="navico ico6"></span><span class='navtit'>Directory</span></a></li>
+                      <li><a href="#"><span class="navico ico7"></span><span class='navtit'>Ask a Doctor</span></a></li>
+                      <li><a href="#"><span class="navico ico8"></span><span class='navtit'>Tourism</span></a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+              </div>
+                </div>
+              
+          </div><!-- /.container -->
+          
+      </header>
+      <section class="inner-page">
+          <div class="parallax-bg pic1"  data-width="1024" data-height="768"  >
+                <div class="parllax-con">
+                </div>
+          </div>
+          <div class="innercon">
+              <div class="container">
+                <div class="fixedtitle">
+                    <h3><span class="titicon heartico"></span>Symptoms</h3>
+                </div>
+                <div class="symptomcontent" ng-controller="symptomcontroller">
+                        
+                
+                    <div id="mainsym">
+                            <div ng-view></div>
+                    </div>
+                    
+                </div>
+              </div>
+          </div>
+      </section>
+        <footer>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                      <div class="quicklinks">
+                        <h5>Quick Links</h5>
+                        <ul>
+                          <li><a href="#">Submit a doctors</a></li>
+                          <li><a href="#">Submmit a hospital</a></li>
+                          <li><a href="#">Check your Symptoms</a></li>
+                          <li><a href="#">edoctors Directory</a></li>
+                          <li><a href="#">Ask a doctor</a></li>
+                          <li><a href="#">Important Telephones</a></li>
+                        </ul>
+                      </div>
+                      <div class="subscribeform">
+                        <form>
+                          <input type="text" class="form-control" >
+                          <input type="button" name="Submit" value="Submit">
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                      <div class="footermenu">
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Registration</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                        <div class="copy">
+                          <p>All content is reviewed by certified doctors.<br/>
+                            Copyright: edoctors.ae, 2017. All rights </p>
+                        </div>
+                        <div class="terms">
+                          <p>Information cannot be reproduced or reprinted with permission of edoctors.ae. <br/>
+                              Use of all facilities is regulated by the Terms of Service portal for users. Part of the symtoms checker is a tool that does ot provide medical advice. It is intended for the information perposes only. It is not intended as a too for diagnosis of conditions or a substitute for a vist , call consultation or advice of doctros or other qualified medical pprofessionals. Information obtained from the website are not final and do not cover all deseases, physical conditions or their symptoms. If you think that you have a medical alert, immediately call your doctor or 999.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                      <div class="followus">
+                        <h3>Follow us</h3>
+                        <ul>
+                          <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                          <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        </ul>
+                      </div>
+                      <div class="applink">
+                          <h3>Download App</h3>
+                          <a href="#"><img src="img/googleplay.png"></a>
+                          <a href="#"><img src="img/itunes.png"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </footer> 
+          </div>
+          <script>
+      $(document).ready(function(){
+        $("map").maphilight();
+      });
+
+         </script>
+          <script src="http://vjs.zencdn.net/6.2.7/video.js"></script>
+          <script src="js/parllaxscroll.js" type="text/javascript"></script>
+          <script src="js/Youtube.js" type="text/javascript"></script>
+          <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+          <script src="js/bootstrap.js" type="text/javascript"></script>
+          <script src="js/sidr.js" type="text/javascript"></script>
+          <script src="js/jquery.maplight.js" type="text/javascript"></script>
+          <script src="js/main.js" type="text/javascript"></script>
+          <script src="js/app.js" type="text/javascript"></script>
+          <script src="js/symptoms.js" type="text/javascript"></script>
+        </body>
+      </html>
