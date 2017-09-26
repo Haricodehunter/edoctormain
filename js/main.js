@@ -61,6 +61,7 @@ $('.owl-carousel').owlCarousel({
 
 
 $(document).ready(function () {
+
     $('.navbar-toggle').sidr({
         name: 'respNav',
         source: '.navbar-collapse', 

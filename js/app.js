@@ -1,29 +1,120 @@
-var app = angular.module('myGallery', ['ngRoute']);
-app.config(function($routeProvider) {
-  $routeProvider
+var app = angular.module('myGallery', ['ui.router']);
+
+app.config(function( $stateProvider , $urlRouterProvider) {
+
+
+  $urlRouterProvider.otherwise('/');  
+  //$routeProvider
 
       // route for the home page
-      .when('/', {
-          templateUrl : 'pages/smain.html',
-          controller  : 'symptomcontroller'
-      })
+      // .when('/', {
+      //     templateUrl : 'pages/smain.html',
+      //     controller  : 'symptomcontroller',
+      //     label: 'Female'
+      // })
 
-      // route for the about page
-      .when('/male', {
-          templateUrl : 'pages/male.html',
-          controller  : 'symptomcontroller'
-      })
+      // // route for the about page
+      // .when('/male', {
+      //     templateUrl : 'pages/male.html',
+      //     controller  : 'symptomcontroller',
+      //     label: 'Female'
+      // })
 
-      // route for the contact page
-      .when('/female', {
-          templateUrl : 'pages/female.html',
-          controller  : 'symptomcontroller'
-      })
-      .when('/symptomsinner', {
-          templateUrl : 'pages/symptomsinner.html',
-          controller  : 'symptomcontroller'
-      });
+      // // route for the contact page
+      // .when('/female', {
+      //     templateUrl : 'pages/female.html',
+      //     controller  : 'symptomcontroller',
+      //     label: 'Female'
+      // })
+      // .when('/symptomsinner', {
+      //     templateUrl : 'pages/symptomsinner.html',
+      //     controller  : 'symptomcontroller',
+      //     label: 'Symptoms'
+      // })
+      // .when('/symptomsinner/Legs', {
+      //     templateUrl : 'pages/symptoms/parts.html',
+      //     controller  : 'symptomcontroller',
+      //     label: 'Legs'
+      // });
+
+
+      $stateProvider
+            .state('symptoms', {
+               
+                url: '/',
+                templateUrl : 'pages/smain.html',
+                controller  : 'symptomcontroller',
+                label: 'Symptoms',
+                data: {
+                  displayName: 'Symptoms',
+              }
+            })
+      
+            // route for the about page
+            .state('male', {
+              url: '/male',
+              name:'male',
+                templateUrl : 'pages/male.html',
+                controller  : 'symptomcontroller',
+                label: 'Male',
+                data: {
+                  displayName: 'Male',
+              }
+            })
+           
+            // route for the contact page
+            .state('female', {
+            
+              url: '/female',
+                templateUrl : 'pages/female.html',
+                controller  : 'symptomcontroller',
+                label: 'Female',
+                data: {
+                  displayName: 'Female',
+              }
+            })
+           
+            .state('male.symptomsinner', {
+                url: '/male/symptomsdet/:parts',
+                templateUrl : 'pages/male/symptomsdetail.html',
+                controller  : 'malecontroller',
+                label: 'Symptoms',
+                data: {
+                  displayName: 'Symptoms',
+              }
+            })
+            .state('male.symptomdetialdis', {
+              url: '/bronchits',
+              templateUrl : 'pages/male/symptomsdiseasecon.html',
+              controller  : 'malecontroller',
+              label: 'Bronchitis',
+              data: {
+                displayName: 'Bronchitis',
+            }
+          })
+          .state('female.symptomdetialdis', {
+            url: '/bronchits',
+            templateUrl : 'pages/female/symptomsdiseasecon.html',
+            controller  : 'femalecontroller',
+            label: 'Bronchitis',
+            data: {
+              displayName: 'Bronchitis',
+          }
+        })
+            .state('female.symptomsinner', {
+              url: '/female/symptomsdet/:parts',
+              templateUrl : 'pages/female/symptomsdetail.html',
+              controller  : 'femalecontroller',
+              label: 'Symptoms',
+              data: {
+                displayName: 'Symptoms',
+            }
+          });
+            
 });
+app.run(function ($state,$rootScope) {
+  $rootScope.$state = $state;
+})
 app.controller('Gallery', function ($scope) {
   $scope.view ="";
   $scope.images = [
