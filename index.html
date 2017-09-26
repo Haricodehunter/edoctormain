@@ -75,6 +75,36 @@
           </div><!-- /.container -->
           
       </header>
+
+      <div class="floatingmenu">
+        <ul>
+          <li class="search">
+            <a href="#"><i class="fa fa-search"></i></a>
+            <span class="searchinput"  aria-hidden="true">
+              <input type="text" name="search"/>
+            </span>
+          </li>
+          <li class="login">
+              <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+          </li>
+          <li class="phone">
+              <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+          </li>
+          <li class="comments">
+              <a href="#"><i class="fa fa-comments" aria-hidden="true"></i></a>
+          </li>
+          <li class="chart">
+              <a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+          </li>
+          <li class="blind">
+              <a href="#"><i class="fa fa-adjust" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="smiley">
+        <button class="smileybutton" data-toggle="modal" data-target="#happinessmeter" ></button>
+      </div>
        <section class="inner"> 
          <!-- start main  carousel -->
           <div class="slider">
@@ -562,12 +592,54 @@
           </div>
         </footer> 
     </div>
-    <script src="http://vjs.zencdn.net/6.2.7/video.js"></script>
-    <script src="js/Youtube.js" type="text/javascript"></script>
-    <script src="js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/sidr.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
+    <div class="modal fade" id="happinessmeter" tabindex="-1" role="dialog" aria-labelledby="happinessmeter" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+             <center>
+               <div class="centerlogo"><img src="img/logo.png"></div> 
+               <h3>How was your experience?</h3>
+            </center>
+             
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <img src="img/close.png" alt="">
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="hmf-faces without-microapp">
+                      <!-- Face actual width 150 -->
+                      <input id="hmf-happy" name="hmf-state" value="happy" type="radio">
+                      <label for="hmf-happy" class="hmf-happy-face-wrapper hmf-face-wrapper sad">
+                          <span class="hface happyface" ></span> 
+                      </label>
+                      <input id="hmf-neutral" name="hmf-state" value="neutral" type="radio">
+                      <label for="hmf-neutral" class="hmf-neutral-face-wrapper hmf-face-wrapper neutral">
+                          <span class="hface neutralface" ></span> 
+                      </label>	        
+                      <input id="hmf-sad" name="hmf-state" value="sad" type="radio">
+                      <label for="hmf-happy" class="hmf-happy-face-wrapper hmf-face-wrapper happy">
+                          <span class="hface sadface" ></span>    
+                      </label>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script src="http://vjs.zencdn.net/6.2.7/video.js"></script>
+      <script src="js/parllaxscroll.js" type="text/javascript"></script>
+      <script src="js/Youtube.js" type="text/javascript"></script>
+      <script src="js/owl.carousel.min.js" type="text/javascript"></script>
+      <script src="js/bootstrap.js" type="text/javascript"></script>
+      <script src="js/sidr.js" type="text/javascript"></script>
+      <script src="js/jquery.maplight.js" type="text/javascript"></script>
+      <script src="js/main.js" type="text/javascript"></script>
+      <script src="js/app.js" type="text/javascript"></script>
+      <script src="js/symptoms.js" type="text/javascript"></script>
   </body>
 </html>
