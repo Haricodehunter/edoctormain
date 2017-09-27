@@ -72,6 +72,39 @@ $(document).ready(function () {
       }, function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
       });
+
+
+      $(function(){
+        $('#happinessorm').on('submit', function(e){
+          e.preventDefault();
+          $.post('', 
+             $('#myForm').serialize(), 
+             function(data, status, xhr){
+               // do something here with response;
+             });
+        });
+    });
+
+    $('.videoslider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.videoslider-nav'
+    });
+    $('.videoslider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      loop:true,
+      prevArrow:'<button type="button" class="slick-prev"></button>',
+      nextArrow:'<button type="button" class="slick-next"></button>',
+      asNavFor: '.videoslider',
+      dots: false,
+      vertical: true,
+      centerMode: false,
+      focusOnSelect: true
+    });
 });
 
 $(document).ready(function(){
