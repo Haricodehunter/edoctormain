@@ -1,66 +1,49 @@
-$('.carousel').carousel();
-
-
-$('.doctorslide').carousel({
-    interval: false
-  });
-  
-  // for every slide in carousel, copy the next slide's item in the slide.
-  // Do the same for the next, next item.
-  $('.doctorslide .item').each(function(){
-    var next = $(this).next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    if (next.next().length>0) {
-      next.next().children(':first-child').clone().appendTo($(this));
-    } else {
-        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-    }
-  });
-
-  $(".parallax-bg").parallaxScroll({friction:.5,direction:"vertical"});
-  
-var affixElement = 'header';
-
-$(affixElement).affix({
-  offset: {
-    // Distance of between element and top page
-    top: function () {
-      return (this.top = $(affixElement).offset().top)
-    },
-    // when start #footer 
-    bottom: function () { 
-      return (this.bottom = $('#footer').outerHeight(true))
-    }
-  }
-});
-
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    dots:true,
-    autoplay:true,
-    animateOut: 'fadeOut',
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:4
-        }
-    }
-});
 
 
 
 $(document).ready(function () {
+
+  $('.carousel').carousel();
+  
+  
+  
+    $(".parallax-bg").parallaxScroll({friction:.5,direction:"vertical"});
+    
+  var affixElement = 'header';
+  
+  $(affixElement).affix({
+    offset: {
+      // Distance of between element and top page
+      top: function () {
+        return (this.top = $(affixElement).offset().top)
+      },
+      // when start #footer 
+      bottom: function () { 
+        return (this.bottom = $('#footer').outerHeight(true))
+      }
+    }
+  });
+  
+  $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      dots:true,
+      autoplay:true,
+      animateOut: 'fadeOut',
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:2
+          },
+          1000:{
+              items:4
+          }
+      }
+  });
+  
 
     $('.navbar-toggle').sidr({
         name: 'respNav',
@@ -85,29 +68,8 @@ $(document).ready(function () {
         });
     });
 
-    $('.videoslider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      asNavFor: '.videoslider-nav'
-    });
-    $('.videoslider-nav').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      loop:true,
-      prevArrow:'<button type="button" class="slick-prev"></button>',
-      nextArrow:'<button type="button" class="slick-next"></button>',
-      asNavFor: '.videoslider',
-      dots: false,
-      vertical: true,
-      centerMode: false,
-      focusOnSelect: true
-    });
-});
+  
 
-$(document).ready(function(){
     
 	var clickEvent = false;
 	$('#videoCarousel').carousel({
@@ -157,13 +119,6 @@ $(document).ready(function(){
       });
 
 })
-
-$(window).load(function() {
-    var boxheight = $('#videoCarousel .carousel-inner').innerHeight();
-    var itemlength = $('#videoCarousel .item').length;
-    var triggerheight = Math.round(boxheight/itemlength+1);
-	$('#videoCarousel .list-group-item').outerHeight(triggerheight);
-});
 
  //this code is close sidr menu if clicked outside  {optional}
  $(document).bind("click", function () {

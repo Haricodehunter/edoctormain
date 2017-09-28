@@ -1,0 +1,375 @@
+<div class="slider">
+        
+             
+                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                     
+                      <!-- Wrapper for slides -->
+                      <carousel class="carousel-inner" role="listbox">
+                          <slide ng-repeat="banner in Homepagebanner.BannerAray" style="background:url('{{banner.WebBannerUrl}}')no-repeat 100%;  background-size:cover;">
+                            <a ui-sref="" href="{{banner.WebBannerUrl}}" title="{{banner.webBannerTitle}}">
+
+                                <img ng-src="{{banner.WebBannerUrl}}" alt="{{banner.webBannerTitle}}">
+                            </a>
+                          </slide>
+                  
+                        </carousel> 
+                  <div class="container">
+                      <!-- Controls -->
+                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <img src="img/leftarrow.png" alt="arrow"/>
+                         
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <img src="img/rightarrow.png" alt="arrow"/>
+                      </a>
+                  </div>
+                  </div> 
+                
+         </div>
+         <!-- end main Carousel -->
+         <section class="main-inner">
+<div class="container">
+        <div class="row">
+          <div class="articlema" ng-repeat="mnews in HomeTopLatestNews.NewsArray">
+            <div class="col-md-6 col-lg-6 col-sm-4 col-xs-12">
+              <a href="#" class="articlema-img" >
+               <img ng-src="{{mnews.WebNewsMainImage}}" alt="" />
+               <span class="hoverheart"></span> 
+              </a>
+            </div> 
+            <div class="col-md-6 col-lg-6 col-sm-8 col-xs-12">
+               <div class="articlema-con" >
+                 <h2> {{mnews.WebNewsTitle}}</h2>
+                 <p>{{mnews.WebNewsSummary}}</p>
+                 <a href="news/mnews.WebNewsID}}" class="btn btn-primary" >Read Now</a>
+               </div>
+             </div> 
+          </div>
+        </div>
+       </div>
+
+      <div class="featuredarticle">
+        <div class="container">
+          <div class="row">
+            <h2><span>F</span>eatured articles</h2>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="carousel slide multi-item-carousel" id="theCarousel">
+                   <!-- Indicators -->
+                 <ol class="carousel-indicators">
+                     <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#theCarousel" data-slide-to="1"></li>
+                 </ol>
+
+                   <div class="carousel-inner">
+                     <div class="item active">
+                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 feart" ng-repeat="fnews in homeData.HomeFeaturedNews.NewsArray.slice(0,4)">
+                           <div class="feart-inner">
+                             <a href="#">
+                               <img ng-src="{{fnews.WebNewsMainImage}}" class="img-responsive">
+                               <h2>{{fnews.WebNewsTitle}}</h2>
+                               <p>{{fnews.WebNewsHeadline}}</p>
+                             </a>
+                             <span class="overlayheart"></span>
+                           </div>
+                         </div>
+                     
+                     
+                       
+                   </div>
+            
+                     <div class="item">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 feart" ng-repeat="fnews in homeData.HomeFeaturedNews.NewsArray.slice(4,8)">
+                        <div class="feart-inner">
+                          <a href="#">
+                            <img ng-src="{{fnews.WebNewsMainImage}}" class="img-responsive">
+                            <h2>{{fnews.WebNewsTitle}}</h2>
+                            <p>{{fnews.WebNewsHeadline}}</p>
+                          </a>
+                          <span class="overlayheart"></span>
+                        </div>
+                      </div>
+                       
+                       
+                     </div>
+                   
+                     <!-- add  more items here -->
+                     <!-- Example item start:  -->
+                     
+                    
+                     
+                     <!--  Example item end -->
+                   </div>
+                   
+                 </div>
+               </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="symbanner">
+                  <a href="#" title="symptoms checker"><img src="img/symptomsbanner.png" alt="symptoms checker"></a>
+                </div>
+                <div class="adbanner">
+                   <a href="#" title="banner"><img src="img/banner11.png" alt="banner"></a>
+                 </div>
+              </div>
+               </div>
+          </div>
+        </div>
+      
+        <div class="featuredavideo" >
+           <div class="container">
+             <div class="row">
+               <h2><span>F</span>eatured Videos</h2>
+               <div class="videopslick">
+                   
+                       <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                               <div class="videoslider">
+                                       <div class="items item-1">
+                                               <div class="videoContainer">
+                                                       <video id="myVideo"  src="https://pixabay.com/en/videos/download/video-6782_source.mp4" class="video-js vjs-default-skin"
+                                                       controls preload="none"  data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }' poster="img/videolarge.png" width="100%" >
+                                                       <source src="https://pixabay.com/en/videos/download/video-6782_source.mp4"></video>
+                                                   </video>
+
+                                                       <div class="caption">
+                                                         <h4>Loresum Ipsum</h4>
+                                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                           </p>
+                                                       </div>
+                                                       
+                                                       </div>
+                                       </div>
+                                       <div class="items item-2">
+                                               <div class="videoContainer">
+                                                       <video id="myVideo"   class="video-js vjs-default-skin"
+                                                       controls preload="none"  data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }' poster="img/videolarge.png" width="100%" >
+                                                       <source src="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"></video>
+                                                       </video>
+                                                       <div class="caption">
+                                                         <h4>Loresum Ipsum</h4>
+                                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                           </p>
+                                                       </div>
+                                                       
+                                                       </div>
+                                       </div>
+                                       <div class="items item-3">
+                                               <div class="videoContainer">
+                                                       <video id="myVideo"  src="https://pixabay.com/en/videos/download/video-6782_source.mp4" class="video-js vjs-default-skin"
+                                                       controls preload="none"  data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }' poster="img/videolarge.png" width="100%" >
+                                                       <source src="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"></video>    
+                                                   </video>
+                                                       <div class="caption">
+                                                         <h4>Loresum Ipsum</h4>
+                                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                                           </p>
+                                                       </div>
+                                                       
+                                                       </div>
+                                       </div>
+                                   </div>
+                       </div>
+                       <div class="col-md-4 col-lg-4 hidden-sm hidden-md">
+                               <div class="videoslider-nav">
+                                       <div class="items item-1 img-list-container">
+                                               <div class="img-list">
+                                                   <div class="col-md-5 col-xs-5">
+                                                      <img src="img/videobanner1.png">
+                                                   </div>
+                                                   <div class="col-md-7 col-xs-7">
+                                                       <div class="caption">
+                                                         <h4>Loresum Ipsum</h4>
+                                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                           </p>
+                                                       </div>
+                                                   </div>
+                                                       </div>
+                                               
+                                       </div>
+                                       <div class="items item-2 img-list-container">
+                                               <div class="img-list">
+                                                       <div class="col-md-5 col-xs-5">
+                                                          <img src="img/videobanner2.png">
+                                                       </div>
+                                                       <div class="col-md-7 col-xs-7">
+                                                           <div class="caption">
+                                                             <h4>Loresum Ipsum</h4>
+                                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                               </p>
+                                                           </div>
+                                                       </div>
+                                                           </div>
+                                       </div>
+                                       <div class="items item-3 img-list-container">
+                                               <div class="img-list">
+                                                       <div class="col-md-5 col-xs-5">
+                                                          <img src="img/videobanner3.png">
+                                                       </div>
+                                                       <div class="col-md-7 col-xs-7">
+                                                           <div class="caption">
+                                                             <h4>Loresum Ipsum</h4>
+                                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                               </p>
+                                                           </div>
+                                                       </div>
+                                                           </div>
+                                       </div>
+                                   </div>
+                       </div>
+                     
+                </div>
+                       
+                      
+                   
+               </div>
+               
+             </div>
+           </div>
+
+         <div class="counter">
+             <div class="container">
+                 <div class="row">
+                   <div class="col-sm-3 col-xs-12">
+                     <div class="item">
+                         <div class="item-img">
+                           <img src="img/parallel1.png" alt="parallel">
+                         </div>
+                         <div class="item-con">
+                             <span class="count">{{HomeCounter.Doctors}}</span>
+                             <span class="con">Doctors</span>
+                         </div>
+                     </div>
+                   </div>
+                   <div class="col-sm-3 col-xs-12">
+                       <div class="item">
+                           <div class="item-img">
+                             <img src="img/parallel2.png" alt="parallel">
+                           </div>
+                           <div class="item-con">
+                               <span class="count">{{HomeCounter.Hospitals}}</span>
+                               <span class="con">Hospitals</span>
+                           </div>
+                       </div>
+                     </div>
+                     <div class="col-sm-3 col-xs-12">
+                         <div class="item">
+                             <div class="item-img">
+                               <img src="img/parallel3.png" alt="parallel">
+                             </div>
+                             <div class="item-con">
+                                 <span class="count">{{HomeCounter.Insurances}}</span>
+                                 <span class="con">Insurances</span>
+                             </div>
+                         </div>
+                       </div>
+                       <div class="col-sm-3 col-xs-12">
+                        <div class="item">
+                            <div class="item-img">
+                              <img src="img/parallel3.png" alt="parallel">
+                            </div>
+                            <div class="item-con">
+                                <span class="count">{{HomeCounter.Pharmacies}}</span>
+                                <span class="con">Pharmacies</span>
+                            </div>
+                        </div>
+                      </div>
+                 </div>
+             </div>
+         </div>
+         <div class="featureddoctor" >
+             <div class="container">
+               <div class="row">
+                   <h2><span>F</span>eatured Doctor</h2>
+                   <div class="slide doctorslide" >
+                     <div class="">
+                       <div class="doctorslideinner">
+                        
+                     <div class="item active ">
+                         <div class="">
+                             <div class="dmain">
+                               <div class="img"><img src="img/doctor1.png" alt="appointment"/></div>
+                               <div class="overlay"></div>
+                               <div class="content">
+                                 <h4>Lorem Ipsum </h4>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                 <a href="#">Appointment Now</a>
+                               </div>
+                             </div>
+                         </div>
+
+                     </div>
+                     <div class="item"> 
+                         <div class="">
+                             <div class="dmain">
+                               <div class="img"><img src="img/doctor2.png" alt="appointment"/></div>
+                               <div class="overlay"></div>
+                               <div class="content">
+                                 <h4>Lorem Ipsum </h4>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                 <a href="#">Appointment Now</a>
+                               </div>
+                             </div>
+                         </div>
+                       </div>
+                     <div class="item"> 
+                           <div class="">
+                             <div class="dmain">
+                               <div class="img"><img src="img/doctor3.png" alt="appointment"/></div>
+                               <div class="overlay"></div>
+                               <div class="content">
+                                 <h4>Lorem Ipsum </h4>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                 <a href="#">Appointment Now</a>
+                               </div>
+                             </div>
+                           </div>
+                       </div>
+                       <div class="item"> 
+                         <div class="">
+                             <div class="dmain">
+                               <div class="img"><img src="img/doctor2.png" alt="appointment"/></div>
+                               <div class="overlay"></div>
+                               <div class="content">
+                                 <h4>Lorem Ipsum </h4>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                 <a href="#">Appointment Now</a>
+                               </div>
+                             </div>
+                         </div>
+                         </div>
+                       <div class="item"> 
+                           <div class="">
+                             <div class="dmain">
+                               <div class="img"><img src="img/doctor3.png" alt="appointment"/></div>
+                               <div class="overlay"></div>
+                               <div class="content">
+                                 <h4>Lorem Ipsum </h4>
+                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                 <a href="#">Appointment Now</a>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="item"> 
+                             <div class="">
+                                 <div class="dmain">
+                                   <div class="img"><img src="img/doctor3.png" alt="appointment"/></div>
+                                   <div class="overlay"></div>
+                                   <div class="content">
+                                     <h4>Lorem Ipsum </h4>
+                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                                     <a href="#">Appointment Now</a>
+                                   </div>
+                                 </div>
+                             </div>
+                           </div>
+                     </div>
+                   
+                    
+                    
+                   
+                     </div>     
+                   </div>
+               </div>
+             </div>
+         </div>
+         </section>
