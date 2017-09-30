@@ -110,7 +110,7 @@
         pre: function preLink(scope, element, attrs, ctrl) {
           var attrOptions = scope.$eval(attrs.masonry || attrs.masonryOptions);
           var options = angular.extend({
-              itemSelector: attrs.itemSelector || '.grid-item',
+              itemSelector: attrs.itemSelector || '.masonry-brick',
               columnWidth: parseInt(attrs.columnWidth, 10) || attrs.columnWidth
             }, attrOptions || {});
           element.masonry(options);

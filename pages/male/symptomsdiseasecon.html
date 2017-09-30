@@ -1,44 +1,43 @@
 <div class="breadcrumb">
         <ul>
                 <li class="tag label label-success">symptoms<a href="#" class="close">x</a></li>
-                <li class="tag label label-success">Chest Pain<a href="#" class="close">x</a></li>
-                <li class="tag label label-success">Bronchitis<a href="#" class="close">x</a></li>
+                <li class="tag label label-success">{{parts}}<a href="#" class="close">x</a></li>
+                <li class="tag label label-success">{{name}}<a href="#" class="close">x</a></li>
             </ul>
     </div>
 <div class="diseasedetail">
 <div class="row">
 <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
 <p>
-Bronchitis is an inflammation of a bronchi and mucous membrane of the respiratory tract caused by viruses and bacteria. Bronchitis can be acute and chronic. Acute bronchitis is usually caused by virus. Chronic bronchitis occurs most frequently in current and ex smokers.
+{{sympcauses.Description}}
 </p>
 
 
 <h5>Symptoms</h5>
 
-<p>Cough, phlegm (usually colored), bloody sputum, 
-shortness of breath, wheezing, chest pain, fever.</p>
+<p>{{sympcauses.SymptomsDesc}}</p>
 
 <h5>Workup</h5>
 
-<p>History of disease is being taken and medical examination is being done. X-rays of lungs may be done to exclude the lung inflammation. Sputum culture is rarely done for 
-identifying the bacteria.</p>
+<p>{{sympcauses.Workout}}</p>
+<div ng-if="sympcauses.WebMedicalTestArray.length!=null">
+<h5 >Tests</h5>
 
-<h5>Tests</h5>
-
-<p>X-rays</p>
-
+<p ng-repeat="webmed in sympcauses.WebMedicalTestArray">{{webmed.Title}}</p>
+</div>
+<div ng-if="sympcauses.WebSpecialtiesArray.length!=null">
 <h5>Additional tests</h5>
-
-<p>Culture of the sputum</p>
-
+<p ng-repeat="webspemed in sympcauses.WebSpecialtiesArray">{{webspemed.Title}}</p>
+</div>
+<div ng-if="sympcauses.WebSpecialtiesArray.length!=null">
 <h5>Specialists</h5>
+<p ng-repeat="webspemed in sympcauses.WebSpecialtiesArray">{{webspemed.Title}}</p>
 
-<p>General Practice, Internal Medicine</p>
+</div>
 
 <h5>Treatment</h5>
 
-<p>Main treatment includes bronchodilators (salbutamol, ipratropium). Other treatments may include: 
-antibiotics, corticosteroids and / or oxygen depending on the severity and cause.</p> 
+<p>{{sympcauses.Treatment}}</p> 
 
 </div>
 <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
@@ -47,18 +46,18 @@ antibiotics, corticosteroids and / or oxygen depending on the severity and cause
         <form>
         <div class="form-group">
             <label>Select Location</label>
-            <select name="location">
+            <select name="location" ng-model="areaselcted" ng-change="changedValue(areaselcted)" >
                 <option default>Select area</option>
-                <option value="Al mankool">Al Mankool</option>
-                <option value="Dubai">Dubai</option>
+                <option ng-repeat="area in hosarea" value="{{area.ID}}">{{area.Title}}</option>
+               
             </select>
         </div>
         <div class="form-group">
-            <label>Select Insurance</label>
-            <select name="location">
+            <label>Select Hospital</label>
+            <select ng-model="selectedIns"  name="location">
                     <option default>Select area</option>
-                    <option value="Adnic">Adnic</option>
-                    <option value="Daman">Daman</option>
+                    <option ng-repeat="ins in hosserinsurance" value="{{ins.ID}}">{{ins.Title}}</option>
+                   
                 </select>
         </div>
         </form>
@@ -67,30 +66,16 @@ antibiotics, corticosteroids and / or oxygen depending on the severity and cause
 </div>
 
 </div>
-<div class="row">
-        <div class="col-md-12 searchhressult">
-            <h3>Search for hospitals/Clinics</h3>
-        <div  class="hospitalslide owl-carousel">
-            <div class="item" >
-                <img src="../img/acessclinic.png" alt="access">
-                <span class="name">Access Clinic-Koyas</span>
-                <span class="website">website:</span>
-            </div>
-            <div class="item">
-                    <img src="../img/alnoor.png" alt="access">
-                    <span class="name">Access Clinic-Koyas</span>
-                    <span class="website">website:</span>
-                </div>
-                <div class="item">
-                        <img src="../img/shira.png" alt="access">
-                        <span class="name">Access Clinic-Koyas</span>
-                        <span class="website">website:</span>
-                    </div>
-                    <div class="item">
-                            <img src="../img/tadvai.png" alt="access">
-                            <span class="name">Access Clinic-Koyas</span>
-                            <span class="website">website:</span>
-                        </div>
+<div class="row" ng-show="showhos">
+    <div class="col-md-12 searchhressult">
+        <h3>Search for hospitals/Clinics</h3>
+    <div  class="hospitalslide owl-carousel">
+        <div class="item" ng-repeat="hosi in hosserinsurance">
+            <img src="../img/dummylogo.jpg" alt="access">
+            <span class="name">{{hosi.Title}}</span>
+            <!-- <a href="tel:{{hosi:LandLine}}"><span class="website">Phone:{{hosi.LandLine}}</span></a> -->
         </div>
-        </div>
+      
     </div>
+    </div>
+</div>

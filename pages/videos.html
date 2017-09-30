@@ -14,12 +14,13 @@
                       </div>
             <div class="videos  col-md-12 col-lg-12 col-sm-12 col-xs-12">
               <h1>Wellness</h1>
-              <div class="row">
-                <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
-                    <div class="video">
-                        <img src="img/p_1.jpg" alt="">
-                        <span>Lorem Ipsum</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+              <div class="row" ng-if="video.Name=='Wellness'" ng-repeat="video in videodata">
+                   
+                <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6" ng-if="video.Name=='Wellness'" ng-repeat="videoinner in video.MediaArray" >
+                    <a fancybox href="{{videoinner.WebMediaVideoURL}}"  target="_blank" class="video">
+                        <img src="{{videoinner.WebMediaMainImage}}" alt="{{videoinner.WebMediaTitle}}">
+                        <span>{{videoinner.WebMediaTitle}}</span>
+                        <p>{{videoinner.WebMediaContent}}</p>
                         <ul>
                             <li>
                                 <i class="fa fa-eye" aria-hidden="true"></i>
@@ -30,9 +31,10 @@
                                 <small>1 month ago</small>
                             </li>
                         </ul>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
+                
+                <!-- <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
                     <div class="video">
                             <img src="img/p_2.jpg" alt="" class="videoActive">
                             <span>Lorem Ipsum</span>
@@ -48,7 +50,7 @@
                                 </li>
                             </ul>
                         </div>
-                </div>
+                </div>-->
                 <div class="moreVideoArea col-md-2 col-lg-2 col-sm-12 col-xs-12">
                         <div class="row">
                         <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
@@ -58,38 +60,39 @@
                                 <img src="img/p_4.jpg" alt="">
                         </div>
                         <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
-                                <button>
+                                <a ui-sref="videosinner">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                 51 more
-                            </button>
+                                </a>
                         </div>
                     </div>
-                </div> 
+                </div>  
               </div>
               <!--/row-->
             </div>
 
             <div class="videos  col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <h1>Nutrition</h1>
-                    <div class="row">
-                      <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
-                          <div class="video">
-                              <img src="img/p_5.jpg" alt="">
-                              <span>Lorem Ipsum</span>
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                              <ul>
-                                  <li>
-                                      <i class="fa fa-eye" aria-hidden="true"></i>
-                                      <small>200</small>
-                                  </li>
-                                  <li>
-                                      <i class="fa fa-calendar" aria-hidden="true"></i>
-                                      <small>1 month ago</small>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                      <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
+                    <div class="row" ng-if="video.Name=='Nutrition'" ng-repeat="video in videodata">
+                            
+                         <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6" ng-if="video.Name=='Nutrition'" ng-repeat="videoinner in video.MediaArray" >
+                             <a  fancybox href="{{videoinner.WebMediaVideoURL}}"  target="_blank" class="video">
+                                 <img src="{{videoinner.WebMediaMainImage}}" alt="{{videoinner.WebMediaTitle}}" />
+                                 <span>{{videoinner.WebMediaTitle}}</span>
+                                 <p>{{videoinner.WebMediaContent}}</p>
+                                 <ul>
+                                     <li>
+                                         <i class="fa fa-eye" aria-hidden="true"></i>
+                                         <small>200</small>
+                                     </li>
+                                     <li>
+                                         <i class="fa fa-calendar" aria-hidden="true"></i>
+                                         <small>1 month ago</small>
+                                     </li>
+                                 </ul>
+                             </a>
+                         </div>
+                      <!-- <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
                           <div class="video">
                                   <img src="img/p_6.jpg" alt="">
                                   <span>Lorem Ipsum</span>
@@ -105,7 +108,7 @@
                                       </li>
                                   </ul>
                               </div>
-                      </div>
+                      </div>-->
                       <div class="moreVideoArea col-md-2 col-lg-2 col-sm-12 col-xs-12">
                             <div class="row">
                                     <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
@@ -115,13 +118,13 @@
                                     <img src="img/p_8.jpg" alt="">
                               </div>
                               <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
-                                    <button>
+                                    <a ui-sref="videosinner">
                                       <i class="fa fa-plus" aria-hidden="true"></i>
                                       51 more
-                                  </button>
+                                    </a>
                               </div>
                           </div>
-                      </div> 
+                      </div>  
                     </div>
                     <!--/row-->
                   </div>
@@ -130,25 +133,26 @@
 
                   <div class="videos  col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <h1>Beauty</h1>
-                        <div class="row">
-                          <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
-                              <div class="video">
-                                  <img src="img/p_9.jpg" alt="">
-                                  <span>Lorem Ipsum</span>
-                                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                                  <ul>
-                                      <li>
-                                          <i class="fa fa-eye" aria-hidden="true"></i>
-                                          <small>200</small>
-                                      </li>
-                                      <li>
-                                          <i class="fa fa-calendar" aria-hidden="true"></i>
-                                          <small>1 month ago</small>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
+                        <div class="row" ng-if="video.Name=='Beauty'" ng-repeat="video in videodata">
+                            
+                             <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6" ng-if="video.Name=='Beauty'" ng-repeat="videoinner in video.MediaArray" >
+                                 <a  fancybox href="{{videoinner.WebMediaVideoURL}}"  target="_blank" class="video">
+                                     <img src="{{videoinner.WebMediaMainImage}}" alt="{{videoinner.WebMediaTitle}}">
+                                     <span>{{videoinner.WebMediaTitle}}</span>
+                                     <p>{{videoinner.WebMediaContent}}</p>
+                                     <ul>
+                                         <li>
+                                             <i class="fa fa-eye" aria-hidden="true"></i>
+                                             <small>200</small>
+                                         </li>
+                                         <li>
+                                             <i class="fa fa-calendar" aria-hidden="true"></i>
+                                             <small>1 month ago</small>
+                                         </li>
+                                     </ul>
+                                 </a>
+                             </div>
+                          <!-- <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6">
                               <div class="video">
                                       <img src="img/p_10.jpg" alt="">
                                       <span>Lorem Ipsum</span>
@@ -164,7 +168,7 @@
                                           </li>
                                       </ul>
                                   </div>
-                          </div>
+                          </div>-->
                           <div class="moreVideoArea col-md-2 col-lg-2 col-sm-12 col-xs-12">
                               <div class="row">
                                     <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
@@ -174,13 +178,13 @@
                                         <img src="img/p_12.jpg" alt="">
                                   </div>
                                   <div class="col-md-12 col-lg-12 col-sm-4 col-xs-4">
-                                        <button>
+                                        <a ui-sref="videosinner">
                                           <i class="fa fa-plus" aria-hidden="true"></i>
                                           51 more
-                                      </button>
+                                        </a>
                                   </div>
                               </div>
-                          </div> 
+                          </div>  
                         </div>
                         <!--/row-->
                       </div>

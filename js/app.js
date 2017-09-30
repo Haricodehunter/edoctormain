@@ -49,28 +49,29 @@ app.config(function( $stateProvider , $urlRouterProvider) {
             })
             .state('healthtips', {
               url: '/healthtips',
-              templateUrl: 'pages/Healthtips.html',
-              abstract:true,
+              template : '<div ui-view></div>',
               controller  : 'Healthtipscontroller',
+              redirectTo: 'healthtips.list'
               
           })
+         
           .state('healthtips.list', {
             url: '/list',
             templateUrl : 'pages/healthtips.list.html',
             controller  : 'Healthtipscontroller',
+            
         })
-          
           .state('healthtips.articles', {
-            url: '/articles/:id',
+            url: '/:id',
             templateUrl : 'pages/healthtips/healthtips.articles.html',
             controller  : 'Healthtipsinnercontroller',
             
         })
         .state('news', {
           url: '/news',
-          templateUrl: 'pages/news.html',
-          abstract:true,
+          template : '<div ui-view></div>',
           controller  : 'newscontroller',
+          redirectTo: 'news.list'
           
       })
       .state('news.list', {
@@ -85,15 +86,25 @@ app.config(function( $stateProvider , $urlRouterProvider) {
         controller  : 'newsinnercontroller',
         
     })
+  
           .state('videos', {
             url: '/videos',
             templateUrl : 'pages/videos.html',
-            controller  : 'videoscontroller',
-            label: 'Health Tips',
+            controller  : 'videocontroller',
+            label: 'Videos',
             data: {
-              displayName: 'Health Tips',
+              displayName: 'Videos',
           }
         })
+        .state('videosinner', {
+          url: '/videoinner',
+          templateUrl : 'pages/videosinner.html',
+          controller  : 'videoinnercontroller',
+          label: ' Video Inner',
+          data: {
+            displayName: 'Health Tips',
+        }
+      })
         .state('aboutus', {
           url: '/aboutus',
           templateUrl : 'pages/about_edoctors.html',
@@ -115,30 +126,55 @@ app.config(function( $stateProvider , $urlRouterProvider) {
             .state('symptoms', {
                
                 url: '/symptoms',
+                controller  : 'symptomcontroller',
                 templateUrl : 'symptoms.html',
-                controller  : 'symptomcontroller',
-                label: 'Symptoms',
-                abstract:true,
-                data: {
-                  displayName: 'Symptoms',
-              }
+                redirectTo: 'symptoms.main'
             })
-      
+            .state('symptoms.main', {
+              
+               url: '/main',
+               templateUrl : 'pages/smain.html',
+               controller  : 'symptomcontroller',
+           })
             // route for the about page
-            .state('male', {
+            .state('symptoms.male', {
               url: '/male',
-              name:'male',
                 templateUrl : 'pages/male.html',
-                controller  : 'symptomcontroller',
-
                 label: 'Male',
                 data: {
                   displayName: 'Male',
               }
             })
-           
+            .state('symptoms.male.all', {
+              url: '/all',
+                templateUrl : 'pages/male/all.html',
+                controller  : 'malecontroller',
+                label: 'All Symptoms',
+                data: {
+                  displayName: 'All Symptoms',
+              }
+            })
+            .state('symptoms.male.symptomsinner', {
+              url: '/:parts/:id',
+              templateUrl : 'pages/male/symptomsdetail.html',
+              controller  : 'malecontroller',
+              label: 'Symptoms',
+              data: {
+                displayName: 'Symptoms',
+            }
+          })
+          .state('symptoms.male.symptomdetialdis', {
+            url: '/:parts/:name?:sid',
+            templateUrl : 'pages/male/symptomsdiseasecon.html',
+            controller  : 'malecontroller',
+            label: 'Bronchitis',
+            data: {
+              displayName: 'Bronchitis',
+          }
+        })
+            
             // route for the contact page
-            .state('female', {
+            .state('symptoms.female', {
             
               url: '/female',
                 templateUrl : 'pages/female.html',
@@ -149,28 +185,20 @@ app.config(function( $stateProvider , $urlRouterProvider) {
                   displayName: 'Female',
               }
             })
-           
-            .state('male.symptomsinner', {
-                url: '/:parts',
-                templateUrl : 'pages/male/symptomsdetail.html',
+            .state('symptoms.female.all', {
+              url: '/all',
+                templateUrl : 'pages/female/all.html',
                 controller  : 'malecontroller',
-                label: 'Symptoms',
+                label: 'All Symptoms',
                 data: {
-                  displayName: 'Symptoms',
+                  displayName: 'All Symptoms',
               }
             })
-            .state('male.symptomdetialdis', {
-              url: '/bronchits',
-              templateUrl : 'pages/male/symptomsdiseasecon.html',
-              controller  : 'malecontroller',
-              label: 'Bronchitis',
-              data: {
-                displayName: 'Bronchitis',
-            }
-          })
+           
+           
 
-          .state('female.symptomdetialdis', {
-            url: '/bronchits',
+          .state('symptoms.female.symptomdetialdis', {
+            url: '/:parts/:name?:sid',
             templateUrl : 'pages/female/symptomsdiseasecon.html',
             controller  : 'femalecontroller',
             label: 'Bronchitis',
@@ -178,8 +206,8 @@ app.config(function( $stateProvider , $urlRouterProvider) {
               displayName: 'Bronchitis',
           }
         })
-            .state('female.symptomsinner', {
-              url: '/symptomsdet/:parts',
+            .state('symptoms.female.symptomsinner', {
+              url: '/:parts/:id',
               templateUrl : 'pages/female/symptomsdetail.html',
               controller  : 'femalecontroller',
               label: 'Symptoms',
@@ -689,6 +717,96 @@ app.controller('importantlinkscontroller', function ($scope, $stateParams, $root
   });
 
 
+  app.controller('videocontroller', function ($scope, $stateParams, $rootScope, $http, HomeService,$timeout) {
+    
+      var videodata = {
+        
+          "nLanguageID":"1",
+          "nWebsiteID":"1",
+          "nCount":"3"
+        };
+    
+    
+    var videoreq = {
+      method: 'POST',
+      url: 'http://edoccms.graffitecs.com/Plugins/Mediagallery/MediaService.svc/GetMediaListingLanding',
+      headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+      "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+      data: videodata
+     }
+     
+     $http(videoreq).then(function successCallback(response){
+    
+    
+      $rootScope.videodata = response.data.GetMediaListingLandingResult.MediaCategoryArray;
+      
+      console.log($rootScope.videodata);
+
+      }, function errorCallback(){
+    
+        console.log("unable fetch data");
+      });
+     
+    });
+
+    app.controller('videoinnercontroller', function ($scope, $stateParams, $rootScope, $http, HomeService,$timeout) {
+      
+        var videodata = {
+          
+            "nLanguageID":"1",
+            "nWebsiteID":"1",
+            "nPageSize":"10",
+            "nPageKey":"1",
+            "nCategoryID":3574
+          };
+      
+      
+      var videoreq = {
+        method: 'POST',
+        url: 'http://edoccms.graffitecs.com/Plugins/Mediagallery/MediaService.svc/GetMediaListing',
+        headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+        "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+        data: videodata
+       }
+       
+       $http(videoreq).then(function successCallback(response){
+      
+      
+        $rootScope.videoinnerdata = response.data.GetMediaListingResult.MediaArray;
+        
+        console.log($rootScope.videoinnerdata);
+  
+        }, function errorCallback(){
+      
+          console.log("unable fetch data");
+        });
+
+        $scope.datalists =   $rootScope.videoinnerdata; // json data
+        
+        //show more functionality
+
+        
+        var pagesShown = 1;
+        
+        var pageSize = 3;
+        
+        $scope.paginationLimit = function(data) {
+         return pageSize * pagesShown;
+        };
+        
+        $scope.hasMoreItemsToShow = function() {
+          if($scope.datalists.length!=null){
+              return pagesShown < ($scope.datalists.length / pageSize);
+          }
+        };
+        
+        $scope.showMoreItems = function() {
+         pagesShown = pagesShown + 1; 
+        
+        }; 
+       
+      });
+  
 
 app.controller('Gallery', function ($scope) {
   $scope.view ="";
@@ -786,5 +904,23 @@ app.factory('HomeService', ['$resource', function($resource) {
  
   }]);
 
+
+
+
+app.directive('fancybox', function($compile) {
+  return {
+    restrict: 'A',
+    replace: false,
+    link: function($scope, element, attrs) {
+      $(element).fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+          media : {}
+        }
+      });
+    }
+  };
+});
 
  

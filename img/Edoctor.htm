@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:8080/#!/healthtips/list -->
+<html lang="en" ng-app="Edoctor" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Edoctor</title>
+      <!-- Bootstrap core CSS -->
+      <link href="./Edoctor_files/owl.carousel.css" rel="stylesheet">
+      <link href="./Edoctor_files/jquery.sidr.dark.css" rel="stylesheet">
+      <link href="./Edoctor_files/slick.css" rel="stylesheet">
+      <link href="./Edoctor_files/angular-page-loader.css" rel="stylesheet">
+      <link href="./Edoctor_files/enu.css" rel="stylesheet">
+      <link data-require="fancybox@2.1.4" data-semver="2.1.4" rel="stylesheet" href="./Edoctor_files/jquery.fancybox.css">
+      <link data-require="fancybox@2.1.4" data-semver="2.1.4" rel="stylesheet" href="./Edoctor_files/jquery.fancybox-thumbs.css">
+      <link data-require="fancybox@2.1.4" data-semver="2.1.4" rel="stylesheet" href="./Edoctor_files/jquery.fancybox-buttons.css">
+  
+      <link href="./Edoctor_files/style.css" rel="stylesheet">
+      <link href="./Edoctor_files/video-js.css" rel="stylesheet">
+    
+     
+    <script type="text/javascript" id="www-widgetapi-script" src="./Edoctor_files/www-widgetapi.js" async=""></script><script src="./Edoctor_files/iframe_api"></script><script src="./Edoctor_files/jquery.min.js" type="text/javascript"></script>
+    <script src="./Edoctor_files/angular.min.js" type="text/javascript"></script>
+    <script src="./Edoctor_files/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="./Edoctor_files/angular-resource.min.js" type="text/javascript"></script>
+    <script src="./Edoctor_files/angular-sanitize.min.js" type="text/javascript"></script>
+     <!-- If you'd like to support IE8 -->
+     <script src="./Edoctor_files/videojs-ie8.min.js"></script>
+  <style type="text/css">.vjs-youtube .vjs-iframe-blocker { display: none; }.vjs-youtube.vjs-user-inactive .vjs-iframe-blocker { display: block; }.vjs-youtube .vjs-poster { background-size: cover; }.vjs-youtube-mobile .vjs-big-play-button { display: none; }</style></head>
+
+  <body>
+      <page-loader flag="isLoading" class="ng-isolate-scope ng-hide" style="background-color: white; position: absolute; width: 100%; height: 100%; z-index: 10000; top: 0px; left: 0px; right: 0px; bottom: 0px;"><div class="loader-container" ng-transclude=""><div class="loader"></div></div></page-loader>
+   <div>
+     <div class="wrapper ng-scope" ng-controller="Homecontroller">
+     <header>
+        <div class="top-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-3 col-xs-6 pull-left">
+                <a ui-sref="home" href="http://localhost:8080/#!/" class="elogo"><img src="./Edoctor_files/logo.png" alt="EDoctors"></a>
+              </div>
+              
+              
+              <div class="col-md-3 col-lg-3 col-sm-3 col-xs-6 pull-right">
+                  <a href="http://localhost:8080/#" class="dha"><img src="./Edoctor_files/dha.png" alt="DHA"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="main-nav row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                      
+                      
+
+        
+                      <!-- ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3442,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico1.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;News&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;news&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="news" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3442,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico1.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;News&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;news&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown" href="http://localhost:8080/#!/news"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico1.png&#39;)no-repeat"></span><span class="navtit ng-binding">News</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3444,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico2.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Health Tips&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;health.tips&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="healthtips" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3444,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico2.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Health Tips&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;health.tips&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown" href="http://localhost:8080/#!/healthtips"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico2.png&#39;)no-repeat"></span><span class="navtit ng-binding">Health Tips</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3446,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico3.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Symptoms&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;symptoms&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="symptoms" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3446,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico3.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Symptoms&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;symptoms&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown" href="http://localhost:8080/#!/symptoms"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico3.png&#39;)no-repeat"></span><span class="navtit ng-binding">Symptoms</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3448,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico4.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Videos&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;videos&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="videos" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3448,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico4.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Videos&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;videos&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown" href="http://localhost:8080/#!/videos"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico4.png&#39;)no-repeat"></span><span class="navtit ng-binding">Videos</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3450,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico5.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Conditions&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;conditions&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="conditions" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3450,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico5.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Conditions&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;conditions&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico5.png&#39;)no-repeat"></span><span class="navtit ng-binding">Conditions</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3452,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico6.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Directory&quot;,&quot;SubMenu&quot;:[{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3456,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Doctors&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;directory.doctor&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3458,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Hospitals/Clinics&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;directory.hospitals.clinics&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3460,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Pharmacies&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;pharmacies&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3462,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Insurances&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;insurances&quot;,&quot;WebsiteID&quot;:1}],&quot;UniqueName&quot;:&quot;directory&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="directory" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3452,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico6.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Directory&quot;,&quot;SubMenu&quot;:[{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3456,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Doctors&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;directory.doctor&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3458,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Hospitals/Clinics&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;directory.hospitals.clinics&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3460,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Pharmacies&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;pharmacies&quot;,&quot;WebsiteID&quot;:1},{&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3462,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/headerBanner/banner.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Insurances&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;insurances&quot;,&quot;WebsiteID&quot;:1}],&quot;UniqueName&quot;:&quot;directory&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown" href="http://localhost:8080/#!/directory"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico6.png&#39;)no-repeat"></span><span class="navtit ng-binding">Directory</span></a>
+                          <ul class="dropdown-menu" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><li ng-repeat="submenu in menu.SubMenu" class="ng-scope"><a ui-sref="directory.doctor" href="http://localhost:8080/#"><i><img src="./Edoctor_files/icon_pharmacies.png" alt="icon"><i class="ng-binding">Doctors</i></i></a></li><!-- end ngRepeat: submenu in menu.SubMenu --><li ng-repeat="submenu in menu.SubMenu" class="ng-scope"><a ui-sref="directory.hospitals.clinics" href="http://localhost:8080/#"><i><img src="./Edoctor_files/icon_pharmacies.png" alt="icon"><i class="ng-binding">Hospitals/Clinics</i></i></a></li><!-- end ngRepeat: submenu in menu.SubMenu --><li ng-repeat="submenu in menu.SubMenu" class="ng-scope"><a ui-sref="pharmacies" href="http://localhost:8080/#"><i><img src="./Edoctor_files/icon_pharmacies.png" alt="icon"><i class="ng-binding">Pharmacies</i></i></a></li><!-- end ngRepeat: submenu in menu.SubMenu --><li ng-repeat="submenu in menu.SubMenu" class="ng-scope"><a ui-sref="insurances" href="http://localhost:8080/#"><i><img src="./Edoctor_files/icon_pharmacies.png" alt="icon"><i class="ng-binding">Insurances</i></i></a></li><!-- end ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><li ng-repeat="menu in menu.CategoryData" ng-class="{true:&#39;dropdown&#39;,false:&#39;no-dropdown&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3454,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico7.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Ask a Doctory&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;ask.a.doctor&quot;,&quot;WebsiteID&quot;:1})]" class="ng-scope">
+                        <a ui-sref="aska.doctor" ng-class="{true:&#39;dropdown-toggle&#39;,false:&#39;no-dropdown-toggle&#39;}[dropdown({&quot;CategoryType&quot;:&quot;GenericContentDAL.Model.GenericContent&quot;,&quot;Description&quot;:&quot;&quot;,&quot;ID&quot;:3454,&quot;Image&quot;:&quot;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico7.png&quot;,&quot;ImageOver&quot;:null,&quot;LanguageID&quot;:1,&quot;ModuleInformationArray&quot;:null,&quot;Name&quot;:&quot;Ask a Doctory&quot;,&quot;SubMenu&quot;:null,&quot;UniqueName&quot;:&quot;ask.a.doctor&quot;,&quot;WebsiteID&quot;:1})]" data-toggle="dropdown"><span class="navico ico2" style="background:url(&#39;http://edoccms.graffitecs.com/Data/Images/edoc/menu/ico7.png&#39;)no-repeat"></span><span class="navtit ng-binding">Ask a Doctory</span></a>
+                          <ul class="dropdown-menu ng-hide" ng-show="menu.SubMenu.length &gt; 0">
+                              <!-- ngRepeat: submenu in menu.SubMenu --><i><i>
+                              
+                            </i></i></ul><i><i>
+                          
+                      </i></i></li><!-- end ngRepeat: menu in menu.CategoryData --><i><i>
+                    
+                    </i></i></ul><i><i>
+                  </i></i></div><!--/.nav-collapse --><i><i>
+              </i></i></div><i><i>
+                </i></i></div><i><i>
+              
+          </i></i></div><!-- /.container --><i><i>
+          
+      </i></i></header><i><i>
+
+      <div class="floatingmenu">
+        <ul>
+          <li class="search">
+            <a href="http://localhost:8080/#"><i class="fa fa-search"></i></a>
+            <span class="searchinput" aria-hidden="true">
+              <input type="text" name="search">
+            </span>
+          </li>
+          <li class="login">
+              <a href="http://localhost:8080/signin.html"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+          </li>
+          <li class="phone">
+              <a href="http://localhost:8080/contact-us.html"><i class="fa fa-phone" aria-hidden="true"></i></a>
+          </li>
+          <li class="comments">
+              <a href="http://localhost:8080/#" data-toggle="modal" data-target="#quiz"><i class="fa fa-comments" aria-hidden="true"></i></a>
+          </li>
+          <li class="chart">
+              <a href="http://localhost:8080/#" data-toggle="modal" data-target="#result"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+          </li>
+          <li class="blind">
+              <a href="http://localhost:8080/#"><i class="fa fa-adjust" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="smiley">
+        <button class="smileybutton" data-toggle="modal" data-target="#happinessmeter"></button>
+      </div>
+       <section class="inner"> 
+         <!-- start main  carousel -->
+       
+           <!-- uiView: --><div ui-view="" class="ng-scope"><!-- uiView: --><div ui-view="" class="ng-scope"><div class="container-fluid ng-scope">
+  <div class="row blog">
+    <div class="banner">
+      <img src="./Edoctor_files/banner_10.jpg" class="img-responsive" alt="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="titlePgae">
+              <img src="./Edoctor_files/icon_health_tips.png" alt="">
+              <span>Health tips </span>
+            </div><!-- /title -->
+          </div>
+
+<div class="tips2  col-md-12 col-lg-12 col-sm-12 col-xs-12">
+    <div class="row">
+          
+    <h1 class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Editor’s Pick</h1>
+    
+    <div masonry="" load-images="true" class="healthtipsarticle  grid">
+      <!-- ngRepeat: news in editornews --><div ng-repeat="news in editornews" class="articleinnersection masonry-brick grid-item ng-scope">
+        <a ui-sref="healthtips.articles({id:&#39;10781&#39;})" href="http://localhost:8080/#!/healthtips/10781" title=""><h2 class="ng-binding">Screening for Birth Defects in Early Pregnancy</h2>
+        <p class="ng-binding">The tests are called combined test, integrated test, and quadruple test </p>
+        <small class="ng-binding">View post /Sarah  / 06-10-2017</small>
+        <figure>
+          <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/news/Pregnancy/article3/1150x600.jpg" alt="Screening for Birth Defects in Early Pregnancy" src="./Edoctor_files/1150x600.jpg">
+        </figure></a>
+      </div><!-- end ngRepeat: news in editornews --><div ng-repeat="news in editornews" class="articleinnersection masonry-brick grid-item ng-scope">
+        <a ui-sref="healthtips.articles({id:&#39;10777&#39;})" href="http://localhost:8080/#!/healthtips/10777" title=""><h2 class="ng-binding">Call the doctor right away for these 4 symptoms</h2>
+        <p class="ng-binding">Chances are these will never happen to your child. But if they do, don’t give it time to see if they will get better </p>
+        <small class="ng-binding">View post /Sarah  / 04-10-2017</small>
+        <figure>
+          <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/news/Parenthood/article4/1150x600.jpg" alt="Call the doctor right away for these 4 symptoms" src="./Edoctor_files/1150x600(1).jpg">
+        </figure></a>
+      </div><!-- end ngRepeat: news in editornews --><div ng-repeat="news in editornews" class="articleinnersection masonry-brick grid-item ng-scope">
+        <a ui-sref="healthtips.articles({id:&#39;10763&#39;})" href="http://localhost:8080/#!/healthtips/10763" title=""><h2 class="ng-binding">Beat Muscle Pain With These Techniques</h2>
+        <p class="ng-binding">These are some of the most cutting-edge techniques to reduce post-exercise muscle soreness. </p>
+        <small class="ng-binding">View post /Sarah  / 07-10-2017</small>
+        <figure>
+          <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/news/fitness/articles2/1150x600.jpg" alt="Beat Muscle Pain With These Techniques" src="./Edoctor_files/1150x600(2).jpg">
+        </figure></a>
+      </div><!-- end ngRepeat: news in editornews --><div ng-repeat="news in editornews" class="articleinnersection masonry-brick grid-item ng-scope">
+        <a ui-sref="healthtips.articles({id:&#39;10753&#39;})" href="http://localhost:8080/#!/healthtips/10753" title=""><h2 class="ng-binding">Safety Tips before Opting for Cosmetic Surgery</h2>
+        <p class="ng-binding">Dubai Health Authority’s smart clinic discusses safety tips before opting for cosmetic surgery </p>
+        <small class="ng-binding">View post /Sarah  / 07-10-2017</small>
+        <figure>
+          <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/news/safty/thumbnail.jpg" alt="Safety Tips before Opting for Cosmetic Surgery" src="./Edoctor_files/thumbnail.jpg">
+        </figure></a>
+      </div><!-- end ngRepeat: news in editornews --><div ng-repeat="news in editornews" class="articleinnersection masonry-brick grid-item ng-scope">
+        <a ui-sref="healthtips.articles({id:&#39;10713&#39;})" href="http://localhost:8080/#!/healthtips/10713" title=""><h2 class="ng-binding">7 smoothies that make you more beautiful</h2>
+        <p class="ng-binding">Healthy insides equal healthy outsides.  The more nutrient dense ingredients we consume on a daily basis, the more our blood supply oxygenates, our immune system strengthens and our energy levels activate our bodies.  While it is getting more difficult to eat a rainbow every day, what with our busy work schedules and demanding lifestyles, we can still consume our RDA (recommended daily allowance) of vitamins and minerals by adding smoothies to our diets. </p>
+        <small class="ng-binding">View post /Sarah  / 30-09-2017</small>
+        <figure>
+          <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/news/smoothies/thumbnail.jpg" alt="7 smoothies that make you more beautiful" src="./Edoctor_files/thumbnail(1).jpg">
+        </figure></a>
+      </div><!-- end ngRepeat: news in editornews -->
+
+  </div>
+
+   
+          <!-- <h2>LOREM IPSUM</h2>
+          <span>Lorem Ipsum is simply dummy text </span>
+          <small>View post / AUTHOR / 09-18-17</small>
+          <img src="img/tip2_3.jpg" alt="">
+        
+
+      
+            <h2>LOREM IPSUM</h2>
+            <span>Lorem Ipsum is simply dummy text </span>
+            <small>View post / AUTHOR / 09-18-17</small>
+            <img src="img/tip2_2.jpg" alt="">
+              <h2>LOREM IPSUM</h2>
+
+
+              <span>Lorem Ipsum is simply dummy text </span>
+              <small>View post / AUTHOR / 09-18-17</small>
+              <img src="img/tip2_4.jpg" alt=""> -->
+            
+    </div>
+    <div class="row">
+            <h1 class="col-md-12 col-lg-12 col-sm-12 col-xs-12">Latest articles</h1>
+
+            <div masonry="" load-images="true" class="healthtipsarticle   grid">
+              <!-- ngRepeat: news in news  | limitTo: paginationLimit() --><div ng-repeat="news in news  | limitTo: paginationLimit()" class="articleinnersection masonry-brick grid-item ng-scope">
+                <a ui-sref="healthtips.articles({id:&#39;10723&#39;})" title="" href="http://localhost:8080/#!/healthtips/10723"><h2 class="ng-binding">New Health Insurance Payment System in Dubai</h2>
+                <p class="ng-binding">The Dubai Health Authority (DHA) said on Tuesday it would adopt a new health insurance payment system across the emirate. </p>
+                <small class="ng-binding">View post /Sarah  / 07-10-2017</small>
+                <figure>
+                  <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/newslisting/Insurance/1150x600 copy.jpg" alt="New Health Insurance Payment System in Dubai" src="./Edoctor_files/1150x600 copy.jpg">
+                </figure></a>
+              </div><!-- end ngRepeat: news in news  | limitTo: paginationLimit() --><div ng-repeat="news in news  | limitTo: paginationLimit()" class="articleinnersection masonry-brick grid-item ng-scope">
+                <a ui-sref="healthtips.articles({id:&#39;10725&#39;})" title="" href="http://localhost:8080/#!/healthtips/10725"><h2 class="ng-binding">Herbal Supplements: Facts and Side-effects</h2>
+                <p class="ng-binding">Echinacea to prevent colds. Ginkgo to improve memory. Flaxseed to lower cholesterol. And the list of herbal remedies goes on and on. </p>
+                <small class="ng-binding">View post /Sarah  / 07-10-2017</small>
+                <figure>
+                  <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/newslisting/Herbal/1150x600 copy.jpg" alt="Herbal Supplements: Facts and Side-effects" src="./Edoctor_files/1150x600 copy(1).jpg">
+                </figure></a>
+              </div><!-- end ngRepeat: news in news  | limitTo: paginationLimit() --><div ng-repeat="news in news  | limitTo: paginationLimit()" class="articleinnersection masonry-brick grid-item ng-scope">
+                <a ui-sref="healthtips.articles({id:&#39;10745&#39;})" title="" href="http://localhost:8080/#!/healthtips/10745"><h2 class="ng-binding">How to get rid of Fatigue and Weakness?</h2>
+                <p class="ng-binding">Don't accept regular fatigue as part of aging. consult your doctor to see if you have any of the following issues. </p>
+                <small class="ng-binding">View post /Sarah  / 07-10-2017</small>
+                <figure>
+                  <img ng-src="http://edoccms.graffitecs.com/Data/Images/edoc/newslisting/Fatigue/1150x600 copy.jpg" alt="How to get rid of Fatigue and Weakness?" src="./Edoctor_files/1150x600 copy(2).jpg">
+                </figure></a>
+              </div><!-- end ngRepeat: news in news  | limitTo: paginationLimit() -->
+
+          </div>
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <button ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">LOAD MORE</button>
+                      </div>
+
+    </div><!--/row-->
+  </div><!-- /tips2 -->
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+         </section>
+      
+         
+        
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="quicklinks">
+                  <h5>Quick Links</h5>
+                  <ul>
+                    <!-- ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/doctor.profile" class="ng-binding">Submit a Doctor's Profiles</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/submit.hospital" class="ng-binding">Submit a Hospitals</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/check.your.symptoms" class="ng-binding">Check your Symptomss</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/edoctors.directory" class="ng-binding">eDoctors Directorys</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/footer.ask.a.doctor" class="ng-binding">Ask a Doctorys</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData --><li ng-repeat="qlinks in homeData.FooterQuickLinks.CategoryData" class="ng-scope"><a href="http://localhost:8080/footer.important.telephones" class="ng-binding">Important Numberss</a></li><!-- end ngRepeat: qlinks in homeData.FooterQuickLinks.CategoryData -->
+                   
+                  </ul>
+                </div>
+                <div class="subscribeform">
+                  <form class="ng-pristine ng-valid">
+                    <input type="text" class="form-control">
+                    <input type="button" name="Submit" value="Submit">
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="footermenu">
+                  <ul>
+                      <!-- ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray --><li ng-repeat="flinks in footlinks.CategoryData[0].ModuleInformationArray" class="ng-scope"><a ui-sref="aboutus" class="ng-binding" href="http://localhost:8080/#!/aboutus">About Us</a></li><!-- end ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray --><li ng-repeat="flinks in footlinks.CategoryData[0].ModuleInformationArray" class="ng-scope"><a ui-sref="registration" class="ng-binding">Registration</a></li><!-- end ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray --><li ng-repeat="flinks in footlinks.CategoryData[0].ModuleInformationArray" class="ng-scope"><a ui-sref="termsconditions" class="ng-binding">Terms &amp; Conditions</a></li><!-- end ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray --><li ng-repeat="flinks in footlinks.CategoryData[0].ModuleInformationArray" class="ng-scope"><a ui-sref="privacypolicy" class="ng-binding">Privacy Policy</a></li><!-- end ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray --><li ng-repeat="flinks in footlinks.CategoryData[0].ModuleInformationArray" class="ng-scope"><a ui-sref="contactus" class="ng-binding">Contact Us</a></li><!-- end ngRepeat: flinks in footlinks.CategoryData[0].ModuleInformationArray -->
+                  </ul>
+                  <div class="copy">
+                    <p>All content is reviewed by certified doctors.<br>
+                      Copyright: edoctors.ae, 2017. All rights </p>
+                  </div>
+                  <div class="terms">
+                    <p>Information cannot be reproduced or reprinted with permission of edoctors.ae. <br>
+                        Use of all facilities is regulated by the Terms of Service portal for users. Part of the symtoms checker is a tool that does ot provide medical advice. It is intended for the information perposes only. It is not intended as a too for diagnosis of conditions or a substitute for a vist , call consultation or advice of doctros or other qualified medical pprofessionals. Information obtained from the website are not final and do not cover all deseases, physical conditions or their symptoms. If you think that you have a medical alert, immediately call your doctor or 999.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <div class="followus">
+                  <h3>Follow us</h3>
+                  <ul>
+                    <li><a href="http://localhost:8080/#" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="http://localhost:8080/#" target="_blank" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="http://localhost:8080/#" target="_blank" class="googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="http://localhost:8080/#" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+                <div class="applink">
+                    <h3>Download App</h3>
+                    <a href="http://localhost:8080/#"><img src="./Edoctor_files/googleplay.png"></a>
+                    <a href="http://localhost:8080/#"><img src="./Edoctor_files/itunes.png"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer> 
+    </i></i></div><i><i>
+    <div class="modal fade happinessmeter" id="happinessmeter" tabindex="-1" role="dialog" aria-labelledby="happinessmeter" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+             <center>
+               <div class="centerlogo"><img src="./Edoctor_files/logo.png"></div> 
+               <h3>How was your experience?</h3>
+            </center>
+             
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <img src="./Edoctor_files/close.png" alt="">
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="post" id="happinessform" class="ng-pristine ng-valid">
+                  <div class="hmf-faces without-microapp">
+                      <!-- Face actual width 150 -->
+                      <input id="hmf-happy" name="hmf-state" value="happy" type="radio">
+                      <label for="hmf-happy" class="hmf-happy-face-wrapper hmf-face-wrapper happy">
+                          <span class="hface happyface"></span> 
+                      </label>
+                      <input id="hmf-neutral" name="hmf-state" value="neutral" type="radio">
+                      <label for="hmf-neutral" class="hmf-neutral-face-wrapper hmf-face-wrapper neutral">
+                          <span class="hface neutralface"></span> 
+                      </label>	        
+                      <input id="hmf-sad" name="hmf-state" value="sad" type="radio">
+                      <label for="hmf-happy" class="hmf-happy-face-wrapper hmf-face-wrapper sad">
+                          <span class="hface sadface"></span>    
+                      </label>
+
+                      
+                  </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="submit " value="Submit" name="submit">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade quiz" id="quiz" tabindex="-1" role="dialog" aria-labelledby="quiz" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+               <center>
+                 <div class="centerlogo"><img src="./Edoctor_files/logo.png"></div> 
+                 <h3>Quiz for today?</h3>
+              </center>
+               
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img src="./Edoctor_files/close.png" alt="">
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="post" class="ng-pristine ng-valid">
+                  <h5>How helpful Doctors?</h5>
+                  <ul>
+                    <li><input id="very_helpful" name="question" value="veryhelpful" type="radio"><label for="very_helpful">Very helpful</label></li>
+                    <li><input id="average" name="question" value="average" type="radio"><label for="average">Average</label></li>
+                    <li><input id="nothelpfulatall" name="question" vlaue="nothelpfulatall" type="radio"><label for="average">Not helpful at all</label></li>
+                  </ul>
+                </form>
+              </div>
+              <div class="modal-footer">
+                  <input type="submit" class="submit " value="Submit" name="submit">
+                  <a href="http://localhost:8080/#" data-toggle="modal" data-target="#result" class="result">Result</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade result" id="result" tabindex="-1" role="dialog" aria-labelledby="result" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                 <center>
+                   <div class="centerlogo"><img src="./Edoctor_files/logo.png"></div> 
+                   <h3>Quiz for today?</h3>
+                </center>
+                 
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <img src="./Edoctor_files/close.png" alt="">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="rrr">
+                      <h5>How helpful edoctor? </h5>
+                      <ul>
+                        <li>
+                            Very helpful<span>90%</span>
+                            <div class="progress ng-isolate-scope" ng-transclude="" max="100" value="90"></div>
+                        </li>
+                        <li>
+                            Average<span>10%</span>
+                            <div class="progress ng-isolate-scope" ng-transclude="" max="100" value="10"></div>
+                        </li>
+                        <li>
+                            Not helpful at all<span>0%</span>
+                            <div class="progress ng-isolate-scope" ng-transclude="" max="100" value="0"></div>
+                        </li>
+                      </ul>
+                  </div>  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <script data-require="jquery@1.8.2" data-semver="1.8.2" src="./Edoctor_files/jquery.js"></script>
+          <script data-require="fancybox@2.1.4" data-semver="2.1.4" src="./Edoctor_files/jquery.fancybox.pack.js"></script>
+          <script data-require="fancybox@2.1.4" data-semver="2.1.4" src="./Edoctor_files/jquery.fancybox.js"></script>
+          <script data-require="fancybox@2.1.4" data-semver="2.1.4" src="./Edoctor_files/jquery.fancybox-thumbs.js"></script>
+          <script data-require="fancybox@2.1.4" data-semver="2.1.4" src="./Edoctor_files/jquery.fancybox-media.js"></script>
+        
+
+    
+          <script src="./Edoctor_files/video.js"></script>
+          <script src="./Edoctor_files/parllaxscroll.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/Youtube.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/owl.carousel.min.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/bootstrap.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/sidr.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/slick.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/jquery.maplight.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/masonary.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/angular-masonary.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/ui-bootstrap.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/angular-page-loader.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/factory.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/directive.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/app.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/symptoms.js" type="text/javascript"></script>
+          <script src="./Edoctor_files/main.js" type="text/javascript"></script>
+        </i></i></div><i><i>
+  <script src="./Edoctor_files/livereload.js" async="" defer=""></script>
+
+</i></i></body></html>

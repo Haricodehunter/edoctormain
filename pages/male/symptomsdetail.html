@@ -8,17 +8,7 @@
 <div class="selctlist">
     <h4>Common Symptoms</h4>
     <ul>
-            <li><a ui-sref="male.symptomdetialdis({id:'4', parts:'{{parts}}'})">Chest Pain</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Chest Pressure</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Chest tightness, heaviness or pressure</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Cough</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Coughing blood</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})"> Croupy cough</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Heart murmur (Abnormal heart sound)</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Heart pulsations and palpitations</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Hemoptysis (coughing blood)</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})"> Lump or mass of breast</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})"> Nipple discharge</a></li>
-            <li><a ui-sref="male.symptomdetialdis({id:'5', parts:'{{parts}}'})">Out of Breath</a></li>
+            <li ng-repeat="sym in symptomsbypart"><a ui-sref="symptoms.male.symptomdetialdis({parts:'{{parts}}',sid:'{{sym.ID}}', name:'{{sym.Title}}', uniq:'{{sym.UniqueName}}'})">{{sym.Title}}</a></li>
+           
         </ul>
 </div>

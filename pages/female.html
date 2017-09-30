@@ -1,46 +1,46 @@
-<h3></h3>
+
 <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
         <div id="female" class="female">
        <img src="{{imgfemale}}" usemap="#{{femalemapview}}" alt="female">
         <div class="row">
                 <a class="btn btn-primary rbtn" ng-show="BackView" ng-click="RotateImg('female', 'back');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
                 <a  class="btn btn-primary rbtn" ng-hide="BackView" ng-click="RotateImg('female', 'front');"><i class="fa fa-undo" aria-hidden="true"></i> Rotate</a>
-                <a hgref="#" class="btn btn-primary rbtn">All Symptoms</a>
+                <a ui-sref="symptoms.female.all" class="btn btn-primary rbtn">All Symptoms</a>
             </div>
         </div>
 </div>       
         <map name="#femalefrontimage-map">
-                <area target="" alt="head" title="head" ui-sref="female.symptomsinner({parts:'head'})"  coords="121,11,74,7,67,65,79,83,98,88,113,85,126,77,132,52,130,26,131,15" shape="poly">
-                <area target="" alt="neck" title="neck" ui-sref="female.symptomsinner({parts:'neck'})"  coords="83,89,116,88,120,107,78,107" shape="poly">
-                <area target="" alt="chest" title="chest" ui-sref="female.symptomsinner({parts:'chest'})"  coords="62,141,39,153,47,197,58,222,71,228,103,229,132,227,142,223,153,203,154,163,153,146,130,147,101,156,83,152" shape="poly">
-                <area target="" alt="stomach" title="stomach" ui-sref="female.symptomsinner({parts:'stomach'})" coords="55,234,140,234,146,270,151,295,87,307,54,302,47,287,56,265" shape="poly">
-                <area target="" alt="gential region" title="gential region" ui-sref="female.symptomsinner({parts:'gential region'})" coords="76,323,72,343,76,357,85,362,100,366,110,363,115,349,116,334,121,319,70,314,89,312,68,313" shape="poly">
-                <area target="" alt="legs" title="legs" ui-sref="female.symptomsinner({parts:'legs'})"  coords="58,470,87,469,90,505,90,572,89,604,88,620,80,630,73,625,60,579,58,547,54,514" shape="poly">
-                <area target="" alt="legs" title="legs" ui-sref="female.symptomsinner({parts:'legs'})"  coords="105,471,134,474,142,473,139,502,139,560,132,594,123,627,103,631,105,534,111,516" shape="poly">
-                <area target="" alt="foot" title="foot" ui-sref="female.symptomsinner({parts:'foot'})"  coords="77,640,97,642,94,670,76,673,73,651" shape="poly">
-                <area target="" alt="foot" title="foot" ui-sref="female.symptomsinner({parts:'foot'})"  coords="103,648,126,651,127,663,129,678,101,674" shape="poly">
-                <area target="" alt="arms" title="arms" ui-sref="female.symptomsinner({parts:'arms'})" coords="158,203,175,195,180,218,185,247,192,277,191,318,178,327,169,266,167,238" shape="poly">
-                <area target="" alt="arms" title="arms" ui-sref="female.symptomsinner({parts:'arms'})" coords="16,189,35,198,32,224,30,263,20,295,16,312,14,327,18,338,3,334,6,310,5,291,5,273,10,250,12,217,16,207,12,233" shape="poly">
-                <area target="" alt="hand" title="hand" ui-sref="female.symptomsinner({parts:'hand'})" coords="3,342,19,343,25,360,27,377,19,391,10,373,1,361" shape="poly">
-                <area target="" alt="hand" title="hand" ui-sref="female.symptomsinner({parts:'hand'})" coords="182,333,196,340,175,392,168,366,175,353" shape="poly">
+                <area target="" alt="head" title="head" ui-sref="symptoms.female.symptomsinner({parts:'head',id:'1'})"  coords="121,11,74,7,67,65,79,83,98,88,113,85,126,77,132,52,130,26,131,15" shape="poly">
+                <area target="" alt="neck" title="neck" ui-sref="symptoms.female.symptomsinner({parts:'neck',id:'2'})"  coords="83,89,116,88,120,107,78,107" shape="poly">
+                <area target="" alt="chest" title="chest" ui-sref="symptoms.female.symptomsinner({parts:'chest',id:'4'})"  coords="62,141,39,153,47,197,58,222,71,228,103,229,132,227,142,223,153,203,154,163,153,146,130,147,101,156,83,152" shape="poly">
+                <area target="" alt="stomach" title="stomach" ui-sref="symptoms.female.symptomsinner({parts:'stomach',id:'1'})" coords="55,234,140,234,146,270,151,295,87,307,54,302,47,287,56,265" shape="poly">
+                <area target="" alt="gential region" title="gential region" ui-sref="symptoms.female.symptomsinner({parts:'gential region',id:'6'})" coords="76,323,72,343,76,357,85,362,100,366,110,363,115,349,116,334,121,319,70,314,89,312,68,313" shape="poly">
+                <area target="" alt="legs" title="legs" ui-sref="symptoms.female.symptomsinner({parts:'legs',id:'8'})"  coords="58,470,87,469,90,505,90,572,89,604,88,620,80,630,73,625,60,579,58,547,54,514" shape="poly">
+                <area target="" alt="legs" title="legs" ui-sref="symptoms.female.symptomsinner({parts:'legs',id:'8'})"  coords="105,471,134,474,142,473,139,502,139,560,132,594,123,627,103,631,105,534,111,516" shape="poly">
+                <area target="" alt="foot" title="foot" ui-sref="symptoms.female.symptomsinner({parts:'foot',id:'9'})"  coords="77,640,97,642,94,670,76,673,73,651" shape="poly">
+                <area target="" alt="foot" title="foot" ui-sref="symptoms.female.symptomsinner({parts:'foot',id:'9'})"  coords="103,648,126,651,127,663,129,678,101,674" shape="poly">
+                <area target="" alt="arms" title="arms" ui-sref="symptoms.female.symptomsinner({parts:'arms',id:'10'})" coords="158,203,175,195,180,218,185,247,192,277,191,318,178,327,169,266,167,238" shape="poly">
+                <area target="" alt="arms" title="arms" ui-sref="symptoms.female.symptomsinner({parts:'arms',id:'10'})" coords="16,189,35,198,32,224,30,263,20,295,16,312,14,327,18,338,3,334,6,310,5,291,5,273,10,250,12,217,16,207,12,233" shape="poly">
+                <area target="" alt="hand" title="hand" ui-sref="symptoms.female.symptomsinner({parts:'hand',id:'14'})" coords="3,342,19,343,25,360,27,377,19,391,10,373,1,361" shape="poly">
+                <area target="" alt="hand" title="hand" ui-sref="symptoms.female.symptomsinner({parts:'hand',id:'14'})" coords="182,333,196,340,175,392,168,366,175,353" shape="poly">
         </map>
         <map name="#femalebackimage-map">
-                <area target="" alt="head" title="head"  ui-sref="female.symptomsinner({parts:'head'})" coords="106,0,88,8,82,16,85,29,88,38,90,47,96,62,99,68,114,72,134,71,141,54,144,41,146,23,144,10,132,3,124,4" shape="poly">
-                <area target="" alt="neck" title="neck" ui-sref="female.symptomsinner({parts:'neck'})" coords="97,72,112,76,136,73,137,86,135,95,115,100,99,101,95,95,93,82" shape="poly">
-                <area target="" alt="upperback" title="upperback" ui-sref="female.symptomsinner({parts:'upper back'})" coords="75,113,160,110,155,137,157,166,167,176,163,193,153,209,101,211,74,208,66,208,76,182,74,164,69,159,75,141,78,127" shape="poly">
-                <area target="" alt="leftshouder" title="leftshouder" ui-sref="female.symptomsinner({parts:'shoulder'})" coords="9,183,30,141,35,130,46,156,47,181,52,196,50,205,16,191,13,187" shape="poly">
-                <area target="" alt="rightshoulder" title="rightshoulder" ui-sref="female.symptomsinner({parts:'shoulder'})" coords="181,188,192,124,206,150,215,170,223,183,213,193,186,205" shape="poly">
-                <area target="" alt="lowerback" title="lowerback" ui-sref="female.symptomsinner({parts:'lower back'})" coords="58,221,177,217,178,277,181,297,182,313,118,316,81,315,53,309,50,302,58,251" shape="poly">
-                <area target="" alt="buttocks" title="buttocks" ui-sref="female.symptomsinner({parts:'buttocks'})" coords="88,327,85,354,89,369,134,367,142,360,143,337,142,324" shape="poly">
-                <area target="" alt="leftlegs" title="leftlegs" ui-sref="female.symptomsinner({parts:'legs'})" coords="52,412,106,413,96,653,76,652,68,604,65,592,58,556,65,536,67,517,67,496,65,468" shape="poly">
-                <area target="" alt="rightlegs" title="rightlegs" ui-sref="female.symptomsinner({parts:'legs'})" coords="126,416,140,415,163,418,176,416,172,439,167,473,163,507,166,537,170,547,167,570,164,591,158,619,156,640,153,649,138,650,138,632,133,579,128,563,130,537,134,511,131,487,132,464,132,446,125,430" shape="poly">
-                <area target="" alt="leftfoot" title="leftfoot" ui-sref="female.symptomsinner({parts:'foot'})" coords="73,658,91,657,96,666,101,675,88,680,66,680" shape="poly">
-                <area target="" alt="rightfoot" title="rightfoot" ui-sref="female.symptomsinner({parts:'foot'})" coords="135,653,149,655,164,674,154,681,138,678,126,674" shape="poly">
+                <area target="" alt="head" title="head"  ui-sref="symptoms.female.symptomsinner({parts:'head',id:'1'})" coords="106,0,88,8,82,16,85,29,88,38,90,47,96,62,99,68,114,72,134,71,141,54,144,41,146,23,144,10,132,3,124,4" shape="poly">
+                <area target="" alt="neck" title="neck" ui-sref="symptoms.female.symptomsinner({parts:'neck',id:'2'})" coords="97,72,112,76,136,73,137,86,135,95,115,100,99,101,95,95,93,82" shape="poly">
+                <area target="" alt="upperback" title="upperback" ui-sref="symptoms.female.symptomsinner({parts:'upper back',id:'11'})" coords="75,113,160,110,155,137,157,166,167,176,163,193,153,209,101,211,74,208,66,208,76,182,74,164,69,159,75,141,78,127" shape="poly">
+                <area target="" alt="leftshouder" title="leftshouder" ui-sref="symptoms.female.symptomsinner({parts:'shoulder',id:'3'})" coords="9,183,30,141,35,130,46,156,47,181,52,196,50,205,16,191,13,187" shape="poly">
+                <area target="" alt="rightshoulder" title="rightshoulder" ui-sref="symptoms.female.symptomsinner({parts:'shoulder',id:'3'})" coords="181,188,192,124,206,150,215,170,223,183,213,193,186,205" shape="poly">
+                <area target="" alt="lowerback" title="lowerback" ui-sref="symptoms.female.symptomsinner({parts:'lower back',id:'12'})" coords="58,221,177,217,178,277,181,297,182,313,118,316,81,315,53,309,50,302,58,251" shape="poly">
+                <area target="" alt="buttocks" title="buttocks" ui-sref="symptoms.female.symptomsinner({parts:'buttocks',id:'13'})" coords="88,327,85,354,89,369,134,367,142,360,143,337,142,324" shape="poly">
+                <area target="" alt="leftlegs" title="leftlegs" ui-sref="symptoms.female.symptomsinner({parts:'legs',id:'8'})" coords="52,412,106,413,96,653,76,652,68,604,65,592,58,556,65,536,67,517,67,496,65,468" shape="poly">
+                <area target="" alt="rightlegs" title="rightlegs" ui-sref="symptoms.female.symptomsinner({parts:'legs',id:'8'})" coords="126,416,140,415,163,418,176,416,172,439,167,473,163,507,166,537,170,547,167,570,164,591,158,619,156,640,153,649,138,650,138,632,133,579,128,563,130,537,134,511,131,487,132,464,132,446,125,430" shape="poly">
+                <area target="" alt="leftfoot" title="leftfoot" ui-sref="symptoms.female.symptomsinner({parts:'foot',id:'9'})" coords="73,658,91,657,96,666,101,675,88,680,66,680" shape="poly">
+                <area target="" alt="rightfoot" title="rightfoot" ui-sref="symptoms.female.symptomsinner({parts:'foot',id:'9'})" coords="135,653,149,655,164,674,154,681,138,678,126,674" shape="poly">
             </map>
 </div>
 <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
     <div ui-view></div>
-        <div ng-show="$state.current.name === 'female'">
+        <div ng-show="$state.current.name === 'female' ">
                 <div class="col-lg-6 col-sm-6 steps step1">
                     <img src="img/step1.png" alt="step1">
                 </div>

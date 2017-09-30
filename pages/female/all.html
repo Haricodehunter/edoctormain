@@ -1,0 +1,13 @@
+<div class="breadcrumb" ng-init="parts= 'all'">
+    <ul>
+        <li class="tag label label-success">All symptoms<a href="#" class="close">x</a></li>
+        <li class="tag label label-success">All Parts<a href="#" class="close">x</a></li>
+    </ul>
+</div>
+<div class="selctlist">
+    <h4>All Symptoms</h4>
+    <ul>
+            <li ng-repeat="sym in symptomsall | limitTo: paginationLimit()"><a ui-sref="symptoms.female.symptomdetialdis({parts:'all', sid:'{{sym.ID}}', name:'{{sym.Title}}', uniq:'{{sym.UniqueName}}'})">{{sym.Title}}</a></li>
+        </ul>
+        <button class="btn btn-primary rbtn " ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">LOAD MORE</button>
+</div>
