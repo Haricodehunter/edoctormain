@@ -1,45 +1,4 @@
-function MyCtrl($scope) {
-    $scope.name = 'Superhero2';
-    $scope.items = [
-        {name:'First', elems:[1,2,3,4,5]}, 
-        {name:'Second', elems:[1,2]}, 
-        {name:'Third', elems:[1]}, 
-        {name:'Forth', elems:[1,2,3,4]}, 
-        {name:'Fifth', elems:[1,2,3]}
-    ];
-    $scope.toggleView = function() {
-        if ($('#container').hasClass('isHidden')) {
-            $('#container').show();
-            $('#container').removeClass('isHidden');
-        } else {
-            $('#container').hide();
-            $('#container').addClass('isHidden');
-        }
-    }
-    $scope.reloadMasonry = function(e) {
-        //var $parent = $(e.currentTarget).parent();
-        //$parent.masonry();
-        console.log("called");
-        $('#container').masonry();
-    }
-    
-    $scope.deleteItem = function(e, item) {
-        $scope.items.splice($scope.items.indexOf(item), 1);
-    }
-    $scope.deleteElem = function(e, item, elem) {                
-        e.preventDefault();
-        e.stopPropagation();        
-        item.elems.splice(item.elems.indexOf(elem), 1);       
-    }
-    
-    /*var container = document.querySelector('#container');
-    var msnry = new Masonry( container, {
-      // options
-      columnWidth: 200,
-      itemSelector: '.item'
-    });*/
-    
-}
+
 
 (function () {
   'use strict';
@@ -151,7 +110,7 @@ function MyCtrl($scope) {
         pre: function preLink(scope, element, attrs, ctrl) {
           var attrOptions = scope.$eval(attrs.masonry || attrs.masonryOptions);
           var options = angular.extend({
-              itemSelector: attrs.itemSelector || '.masonry-brick',
+              itemSelector: attrs.itemSelector || '.grid-item',
               columnWidth: parseInt(attrs.columnWidth, 10) || attrs.columnWidth
             }, attrOptions || {});
           element.masonry(options);

@@ -14,10 +14,27 @@ app.run(function($timeout, $rootScope) {
     }, 3000)
   
   })
+
+  app.config(($transitionsProvider) => {
+    
+          $transitionsProvider.onBefore({
+            to: state => !!state.abstract
+          }, ($transition$, $state, $injector) => {
+            let abstractParam = $transition$.to().abstract;
+    
+            if (angular.isFunction(abstractParam)) {
+              return $state.target($injector.invoke(abstractParam), $transition$.params())
+            } else if (angular.isString(abstractParam)) {
+              return $state.target(abstractParam, $transition$.params());
+            }
+          });
+        });
+
 app.config(function( $stateProvider , $urlRouterProvider) {
 
 
   $urlRouterProvider.otherwise('/');  
+  
       $stateProvider
 
               .state('home', {
@@ -32,35 +49,41 @@ app.config(function( $stateProvider , $urlRouterProvider) {
             })
             .state('healthtips', {
               url: '/healthtips',
-              templateUrl : 'pages/Healthtips.html',
+              templateUrl: 'pages/Healthtips.html',
+              abstract:true,
               controller  : 'Healthtipscontroller',
-              label: 'Health Tips',
-              data: {
-                displayName: 'Health Tips',
-            }
-          
+              
           })
-          .state('healthtipsarticles', {
+          .state('healthtips.list', {
+            url: '/list',
+            templateUrl : 'pages/healthtips.list.html',
+            controller  : 'Healthtipscontroller',
+        })
+          
+          .state('healthtips.articles', {
             url: '/articles/:id',
-            templateUrl : 'pages/healthtipsinner.html',
+            templateUrl : 'pages/healthtips/healthtips.articles.html',
             controller  : 'Healthtipsinnercontroller',
-           
+            
         })
         .state('news', {
           url: '/news',
-          templateUrl : 'pages/news.html',
-          controller  : 'Healthtipscontroller',
-          label: 'Health Tips',
-          data: {
-            displayName: 'Health Tips',
-        }
-      
+          templateUrl: 'pages/news.html',
+          abstract:true,
+          controller  : 'newscontroller',
+          
       })
-      .state('newsarticles', {
+      .state('news.list', {
+        url: '/list',
+        templateUrl : 'pages/news.list.html',
+        controller  : 'newscontroller',
+    })
+      
+      .state('news.articles', {
         url: '/articles/:id',
-        templateUrl : 'pages/newsinner.html',
-        controller  : 'Healthtipsinnercontroller',
-       
+        templateUrl : 'pages/news/news.articles.html',
+        controller  : 'newsinnercontroller',
+        
     })
           .state('videos', {
             url: '/videos',
@@ -80,12 +103,22 @@ app.config(function( $stateProvider , $urlRouterProvider) {
             displayName: 'About us',
         }
       })
+      .state('directory', {
+        url: '/directory',
+        templateUrl : 'pages/directory.html',
+        controller  : 'importantlinkscontroller',
+        label: 'Important Tel',
+        data: {
+          displayName: 'Imoortant Telephone',
+      }
+    })
             .state('symptoms', {
                
                 url: '/symptoms',
-                templateUrl : 'pages/smain.html',
+                templateUrl : 'symptoms.html',
                 controller  : 'symptomcontroller',
                 label: 'Symptoms',
+                abstract:true,
                 data: {
                   displayName: 'Symptoms',
               }
@@ -97,6 +130,7 @@ app.config(function( $stateProvider , $urlRouterProvider) {
               name:'male',
                 templateUrl : 'pages/male.html',
                 controller  : 'symptomcontroller',
+
                 label: 'Male',
                 data: {
                   displayName: 'Male',
@@ -110,13 +144,14 @@ app.config(function( $stateProvider , $urlRouterProvider) {
                 templateUrl : 'pages/female.html',
                 controller  : 'symptomcontroller',
                 label: 'Female',
+
                 data: {
                   displayName: 'Female',
               }
             })
            
             .state('male.symptomsinner', {
-                url: '/male/symptomsdet/:parts',
+                url: '/:parts',
                 templateUrl : 'pages/male/symptomsdetail.html',
                 controller  : 'malecontroller',
                 label: 'Symptoms',
@@ -144,7 +179,7 @@ app.config(function( $stateProvider , $urlRouterProvider) {
           }
         })
             .state('female.symptomsinner', {
-              url: '/female/symptomsdet/:parts',
+              url: '/symptomsdet/:parts',
               templateUrl : 'pages/female/symptomsdetail.html',
               controller  : 'femalecontroller',
               label: 'Symptoms',
@@ -152,6 +187,9 @@ app.config(function( $stateProvider , $urlRouterProvider) {
                 displayName: 'Symptoms',
             }
           });
+
+         
+          
             
 });
 app.run(function ($state,$rootScope) {
@@ -348,14 +386,6 @@ var req = {
     });
 
 
-  $timeout(function() {
-  $('.grid').masonry({
-    // options
-    itemSelector: '.grid-item',
-
-  });
-  },4000);
-
   $scope.datalists =  $rootScope.editornews; // json data
   
   //show more functionality
@@ -506,13 +536,7 @@ var req = {
     });
 
 
-  $timeout(function() {
-  $('.grid').masonry({
-    // options
-    itemSelector: '.grid-item',
-
-  });
-  },4000);
+  
 
   $scope.datalists =  $rootScope.editornews; // json data
   
@@ -601,6 +625,68 @@ var relreq = {
 
 });
 
+
+app.controller('importantlinkscontroller', function ($scope, $stateParams, $rootScope, $http, HomeService,$timeout) {
+  
+    var hdata = {
+      "nWebsiteID":"1",
+      "nLanguageID":"1",
+      "nUniqueName":"footer.important.telephones",
+      "nModuleType":"GenericContentDAL.Model.GenericContent"
+  };
+  
+  
+  var req = {
+    method: 'POST',
+    url: 'http://edoccms.graffitecs.com/Plugins/GenericContent/GenericContentService.svc/GetGenericContentByCategoryUniqueName',
+    headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+    "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+    data: hdata
+   }
+   
+   $http(req).then(function successCallback(response){
+  
+  
+  
+    $rootScope.importanttel = response.data.GetGenericContentByCategoryUniqueNameResult.ContentAray;
+    
+  
+
+   
+    }, function errorCallback(){
+  
+      console.log("unable fetch data");
+    });
+    var relhdata = {
+      "nLanguageID":"1",
+      "nWebsiteID":"1",
+      "nCount":"3",
+      "nExcludedNewsID":$stateParams.id,
+      "nCategoryUniqueName":"articles"
+  };
+  
+  
+  var relreq = {
+    method: 'POST',
+    url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetRelatedArticles',
+    headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+    "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+    data: relhdata
+   }
+   
+   $http(relreq).then(function successCallback(response){
+  
+    $rootScope.relnews = response.data.GetRelatedArticlesResult.NewsArray;
+    
+    console.log($rootScope.relnews);
+  
+   
+    }, function errorCallback(){
+  
+      console.log("unable fetch related data");
+    });
+  
+  });
 
 
 
