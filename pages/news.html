@@ -8,7 +8,7 @@
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
               <div class="titlePgae">
                 <img src="img/icon_health_tips.png" alt="">
-                <span>Health tips </span>
+                <span>News</span>
               </div><!-- /title -->
             </div>
 
@@ -54,7 +54,7 @@
 
                       <div   masonry   load-images="true" class="healthtipsarticle   grid" >
                         <div  ng-repeat="news in news  | limitTo: paginationLimit()"   class="articleinnersection masonry-brick grid-item">
-                          <a ui-sref="healthtipsarticles({id:'{{news.WebNewsID}}'})" title=""><h2>{{news.WebNewsTitle}}</h2>
+                          <a ui-sref="newsarticles({id:'{{news.WebNewsID}}'})" title=""><h2>{{news.WebNewsTitle}}</h2>
                           <p>{{news.WebNewsSummary}} </p>
                           <small>View post /{{news.WebNewsAuthor}}  / {{news.WebNewsDate}}</small>
                           <figure>

@@ -1,4 +1,4 @@
-var app = angular.module('Edoctor', ['ui.router','ngResource','ui.bootstrap','angular-page-loader']);
+var app = angular.module('Edoctor', ['ui.router','ngResource','ui.bootstrap','angular-page-loader','EdoctorDir','wu.masonry','ngSanitize']);
 
 
 app.run(function($timeout, $rootScope) {
@@ -40,6 +40,28 @@ app.config(function( $stateProvider , $urlRouterProvider) {
             }
           
           })
+          .state('healthtipsarticles', {
+            url: '/articles/:id',
+            templateUrl : 'pages/healthtipsinner.html',
+            controller  : 'Healthtipsinnercontroller',
+           
+        })
+        .state('news', {
+          url: '/news',
+          templateUrl : 'pages/news.html',
+          controller  : 'Healthtipscontroller',
+          label: 'Health Tips',
+          data: {
+            displayName: 'Health Tips',
+        }
+      
+      })
+      .state('newsarticles', {
+        url: '/articles/:id',
+        templateUrl : 'pages/newsinner.html',
+        controller  : 'Healthtipsinnercontroller',
+       
+    })
           .state('videos', {
             url: '/videos',
             templateUrl : 'pages/videos.html',
@@ -193,9 +215,12 @@ app.controller('Homecontroller', function ($scope, $rootScope, $http, HomeServic
 
     $scope.dropdown = function(menu)
     {
-     $scope.submenu = menu.SubMenu.length;
-
+    
+     if ( menu.SubMenu != null &&  menu.SubMenu.length < 1) {
+         $scope.submenu = menu.SubMenu.length;
         $scope.dropdownlength = ($scope.submenu > 0) ? true : false;
+      
+     }
         return $scope.dropdownlength;
     }
     $timeout(function() {
@@ -262,8 +287,323 @@ app.controller('Homecontroller', function ($scope, $rootScope, $http, HomeServic
 });
 
 app.controller('Healthtipscontroller', function ($scope, $rootScope, $http, HomeService,$timeout) {
+  var hdata = {
+    "nLanguageID":"1",
+    "nWebsiteID":"1",
+    "nPageSize":"10",
+    "nPageKey":"1",
+    "nCategoryUniqueName":"articles"
+};
+
+
+var req = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetNewsListing',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: hdata
+ }
+ 
+ $http(req).then(function successCallback(response){
+
+
+
+  $rootScope.news = response.data.GetNewsListingResult.NewsArray;
+  
+  console.log($rootScope.news);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch data");
+  });
+
+
+  var ehdata = {
+    "nLanguageID":"1",
+    "nWebsiteID":"1",
+    "nCategoryUniqueName":"articles",
+    "nCount":"5"
+};
+  var reeq = {
+    method: 'POST',
+    url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetEditorPickArticles',
+    headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+    "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+    data: ehdata
+   }
+   
+   $http(reeq).then(function successCallback(response){
+  
+  
+  
+    $rootScope.editornews = response.data.GetEditorPickArticlesResult.NewsArray;
+    
+    console.log($rootScope.editornews);
+  
+   
+    }, function errorCallback(){
+  
+      console.log("unable fetch data");
+    });
+
+
+  $timeout(function() {
+  $('.grid').masonry({
+    // options
+    itemSelector: '.grid-item',
+
+  });
+  },4000);
+
+  $scope.datalists =  $rootScope.editornews; // json data
+  
+  //show more functionality
+  
+  var pagesShown = 1;
+  
+  var pageSize = 3;
+  
+  $scope.paginationLimit = function(data) {
+   return pageSize * pagesShown;
+  };
+  
+  $scope.hasMoreItemsToShow = function() {
+    if($scope.datalists.length!=null){
+        return pagesShown < ($scope.datalists.length / pageSize);
+    }
+  };
+  
+  $scope.showMoreItems = function() {
+   pagesShown = pagesShown + 1; 
+  
+  }; 
+
 
 });
+
+
+
+app.controller('Healthtipsinnercontroller', function ($scope, $stateParams, $rootScope, $http, HomeService,$timeout) {
+
+  var hdata = {
+    "nID":$stateParams.id
+};
+
+
+var req = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetArticleByID',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: hdata
+ }
+ 
+ $http(req).then(function successCallback(response){
+
+
+
+  $rootScope.newssingle = response.data.GetArticleByIDResult.NewsArray[0];
+  
+  console.log($rootScope.newssingle);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch data");
+  });
+  var relhdata = {
+    "nLanguageID":"1",
+    "nWebsiteID":"1",
+    "nCount":"3",
+    "nExcludedNewsID":$stateParams.id,
+    "nCategoryUniqueName":"articles"
+};
+
+
+var relreq = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetRelatedArticles',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: relhdata
+ }
+ 
+ $http(relreq).then(function successCallback(response){
+
+  $rootScope.relnews = response.data.GetRelatedArticlesResult.NewsArray;
+  
+  console.log($rootScope.relnews);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch related data");
+  });
+
+});
+
+
+app.controller('newscontroller', function ($scope, $rootScope, $http, HomeService,$timeout) {
+  var hdata = {
+      "nLanguageID":"1",
+      "nWebsiteID":"1",
+      "nPageSize":"10",
+      "nPageKey":"1",
+      "nCategoryUniqueName":"news"
+    };
+
+
+var req = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetNewsListing',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: hdata
+ }
+ 
+ $http(req).then(function successCallback(response){
+
+
+
+  $rootScope.news = response.data.GetNewsListingResult.NewsArray;
+  
+  console.log($rootScope.news);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch data");
+  });
+
+
+  var ehdata = {
+    "nLanguageID":"1",
+    "nWebsiteID":"1",
+    "nCategoryUniqueName":"articles",
+    "nCount":"5"
+};
+  var reeq = {
+    method: 'POST',
+    url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetEditorPickArticles',
+    headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+    "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+    data: ehdata
+   }
+   
+   $http(reeq).then(function successCallback(response){
+  
+  
+  
+    $rootScope.editornews = response.data.GetEditorPickArticlesResult.NewsArray;
+    
+    console.log($rootScope.editornews);
+  
+   
+    }, function errorCallback(){
+  
+      console.log("unable fetch data");
+    });
+
+
+  $timeout(function() {
+  $('.grid').masonry({
+    // options
+    itemSelector: '.grid-item',
+
+  });
+  },4000);
+
+  $scope.datalists =  $rootScope.editornews; // json data
+  
+  //show more functionality
+  
+  var pagesShown = 1;
+  
+  var pageSize = 3;
+  
+  $scope.paginationLimit = function(data) {
+   return pageSize * pagesShown;
+  };
+  
+  $scope.hasMoreItemsToShow = function() {
+    if($scope.datalists.length!=null){
+        return pagesShown < ($scope.datalists.length / pageSize);
+    }
+  };
+  
+  $scope.showMoreItems = function() {
+   pagesShown = pagesShown + 1; 
+  
+  }; 
+
+
+});
+
+
+
+app.controller('newsinnercontroller', function ($scope, $stateParams, $rootScope, $http, HomeService,$timeout) {
+
+  var hdata = {
+    "nID":$stateParams.id
+};
+
+
+var req = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetArticleByID',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: hdata
+ }
+ 
+ $http(req).then(function successCallback(response){
+
+
+
+  $rootScope.newssingle = response.data.GetArticleByIDResult.NewsArray[0];
+  
+  console.log($rootScope.newssingle);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch data");
+  });
+  var relhdata = {
+    "nLanguageID":"1",
+    "nWebsiteID":"1",
+    "nCount":"3",
+    "nExcludedNewsID":$stateParams.id,
+    "nCategoryUniqueName":"articles"
+};
+
+
+var relreq = {
+  method: 'POST',
+  url: 'http://edoccms.graffitecs.com/Plugins/News/NewsService.svc/GetRelatedArticles',
+  headers: {"UsernameToken":"200ceb26807d6bf99fd6f4f0d1ca54d4",
+  "PasswordToken":"382e0360e4eb7b70034fbaa69bec5786"},
+  data: relhdata
+ }
+ 
+ $http(relreq).then(function successCallback(response){
+
+  $rootScope.relnews = response.data.GetRelatedArticlesResult.NewsArray;
+  
+  console.log($rootScope.relnews);
+
+ 
+  }, function errorCallback(){
+
+    console.log("unable fetch related data");
+  });
+
+});
+
+
+
+
 app.controller('Gallery', function ($scope) {
   $scope.view ="";
   $scope.images = [
@@ -361,138 +701,4 @@ app.factory('HomeService', ['$resource', function($resource) {
   }]);
 
 
-  app.directive('slickSlider', ['$timeout', function ($timeout) {
-    
-        return {
-    
-            restrict: 'A',
-    
-            //templateUrl: 'pages/home/SLIDER/_homeslider.html',
-    
-            link: function (scope, element, attrs) {   
-    
-                 $timeout(function(){  
-    
-                    var count = element.data('count');
-    
-                    var effect = element.data('fade');
-    
-                    var auto = element.data('autoplay');
-    
-                    var countxlg = element.data('countxlg');
-    
-                    var countlg = element.data('countlg');
-    
-                    var countnormal = element.data('countnormal');
-    
-                    var countsm = element.data('countsm');
-    
-                    var countmd = element.data('countmd');
-                    var dots = element.data('dots');
-    
-                    element.slick({
-                        lazyLoad: 'ondemand',
-    
-                        slidesToShow: count,
-    
-                        slidesToScroll: count,
-    
-                        autoplay: true,
-    
-                        infinite: true,
-    
-                        dots: dots,
-    
-                        fade: effect,
-    
-                        autoplaySpeed: 3000,
-    
-                        responsive: [
-    
-                             {
-    
-                                 breakpoint: 1920,
-    
-                                 settings: {
-    
-                                     slidesToShow: count,
-    
-                                     slidesToScroll: countlg
-    
-                                 }
-    
-                             },
-    
-                              {
-    
-                                  breakpoint: 1440,
-    
-                                  settings: {
-    
-                                      slidesToShow: countlg,
-    
-                                      slidesToScroll: countlg
-    
-                                  }
-    
-                              },
-    
-         {
-    
-             breakpoint: 1024,
-    
-             settings: {
-    
-                 slidesToShow: countmd,
-    
-                 slidesToScroll: countmd,
-    
-             }
-    
-         },
-    
-       {
-    
-           breakpoint: 600,
-    
-           settings: {
-    
-               slidesToShow: countmd,
-    
-               slidesToScroll: countmd
-    
-           }
-    
-       },
-    
-       {
-    
-           breakpoint: 480,
-    
-           settings: {
-    
-               slidesToShow: countsm,
-    
-               slidesToScroll: countsm
-    
-           }
-    
-       }
-    
-       // You can unslick at a given breakpoint now by adding:
-    
-       // settings: "unslick"
-    
-       // instead of a settings object
-    
-                        ]
-    
-                    });
-    
-    },2000) ;
-    
-            }
-    
-        };
-    
-    }]);
+ 
